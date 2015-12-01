@@ -910,6 +910,12 @@ module.exports =
 
   var _reactAvatarEditor2 = _interopRequireDefault(_reactAvatarEditor);
 
+  var sizes = {
+    picHeight: 400,
+    picWidth: 400,
+    border: 30
+  };
+
   var _default = (function (_Component) {
     _inherits(_default, _Component);
 
@@ -937,40 +943,76 @@ module.exports =
           _react2['default'].createElement(
             'p',
             null,
-            'Coming soon.'
+            'Standard 135 film & print size in US, Canada, Australia and India. Called "10 × 15 cm" worldwide.'
           ),
           _react2['default'].createElement(_reactAvatarEditor2['default'], {
             image: 'http://i.imgur.com/y7yZHAF.jpg',
-            width: 250,
-            height: 250,
-            border: 50,
+            width: sizes.picWidth,
+            height: sizes.picHeight,
+            border: sizes.border,
             ref: 'editor',
             scale: this.state.scale }),
-          _react2['default'].createElement('input', {
-            type: 'range',
-            min: 0.1,
-            max: 5,
-            step: 0.1,
-            defaultValue: parseFloat(this.state.scale),
-            onChange: this.changeScale.bind(this) }),
           _react2['default'].createElement(
-            'button',
-            { onClick: this.processImage.bind(this) },
-            'Process'
+            'div',
+            null,
+            _react2['default'].createElement(
+              'label',
+              null,
+              'Zoom:'
+            ),
+            _react2['default'].createElement('input', {
+              type: 'range',
+              min: 0.1,
+              max: 5,
+              step: 0.1,
+              defaultValue: this.state.scale,
+              onChange: this.changeScale.bind(this) }),
+            _react2['default'].createElement(
+              'button',
+              { onClick: this.processImage.bind(this) },
+              'Process'
+            )
           ),
-          _react2['default'].createElement('img', { src: this.state.processedImage })
+          _react2['default'].createElement(
+            'div',
+            null,
+            _react2['default'].createElement('img', {
+              src: this.state.processedImage,
+              style: { width: 600 } })
+          ),
+          _react2['default'].createElement('canvas', {
+            ref: 'canvas',
+            width: sizes.picWidth * 3,
+            height: sizes.picHeight * 2,
+            style: { display: 'none' } })
         );
       }
     }, {
       key: 'changeScale',
       value: function changeScale(e) {
-        this.setState({ scale: e.target.value });
+        this.setState({ scale: parseFloat(e.target.value) });
       }
     }, {
       key: 'processImage',
       value: function processImage() {
         var dataUrl = this.refs.editor.getImage();
-        this.setState({ processedImage: dataUrl });
+        this.drawCanvas(dataUrl);
+      }
+    }, {
+      key: 'drawCanvas',
+      value: function drawCanvas(dataUrl) {
+        var canvas = this.refs.canvas;
+        if (!canvas) return console.log('Canvas not supported');
+
+        var ctx = canvas.getContext('2d');
+        var img = new Image(dataUrl);
+        img.src = dataUrl;
+        for (var x = 0; x <= 3; x++) {
+          for (var y = 0; y <= 2; y++) {
+            ctx.drawImage(img, x * canvas.width / 3, y * canvas.height / 2);
+          }
+        }
+        this.setState({ processedImage: canvas.toDataURL() });
       }
     }]);
 
