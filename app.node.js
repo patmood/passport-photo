@@ -461,7 +461,7 @@ module.exports =
         { className: 'Navigation-item' },
         _react2['default'].createElement(
           'a',
-          { className: 'Navigation-link', href: '', onClick: _Link2['default'].handleClick },
+          { className: 'Navigation-link', href: '/', onClick: _Link2['default'].handleClick },
           'Home'
         )
       ),
@@ -470,7 +470,7 @@ module.exports =
         { className: 'Navigation-item' },
         _react2['default'].createElement(
           'a',
-          { className: 'Navigation-link', href: 'about', onClick: _Link2['default'].handleClick },
+          { className: 'Navigation-link', href: '/about', onClick: _Link2['default'].handleClick },
           'About'
         )
       )
