@@ -65,7 +65,7 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _reactDom = __webpack_require__(21);
+  var _reactDom = __webpack_require__(22);
 
   var _reactDom2 = _interopRequireDefault(_reactDom);
 
@@ -906,13 +906,18 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
+  var _reactAvatarEditor = __webpack_require__(21);
+
+  var _reactAvatarEditor2 = _interopRequireDefault(_reactAvatarEditor);
+
   var _default = (function (_Component) {
     _inherits(_default, _Component);
 
-    function _default() {
+    function _default(props) {
       _classCallCheck(this, _default);
 
-      _get(Object.getPrototypeOf(_default.prototype), 'constructor', this).apply(this, arguments);
+      _get(Object.getPrototypeOf(_default.prototype), 'constructor', this).call(this, props);
+      this.state = { scale: 1 };
     }
 
     _createClass(_default, [{
@@ -930,8 +935,20 @@ module.exports =
             'p',
             null,
             'Coming soon.'
-          )
+          ),
+          _react2['default'].createElement(_reactAvatarEditor2['default'], {
+            image: 'http://i.imgur.com/y7yZHAF.jpg',
+            width: 250,
+            height: 250,
+            border: 50,
+            scale: this.state.scale }),
+          _react2['default'].createElement('input', { type: 'range', min: 0.1, max: 5, step: 0.1, defaultValue: this.state.scale, onChange: this.changeScale.bind(this) })
         );
+      }
+    }, {
+      key: 'changeScale',
+      value: function changeScale(e) {
+        this.setState({ scale: e.target.value });
       }
     }]);
 
@@ -1003,6 +1020,12 @@ module.exports =
 
 /***/ },
 /* 21 */
+/***/ function(module, exports) {
+
+  module.exports = require("react-avatar-editor");
+
+/***/ },
+/* 22 */
 /***/ function(module, exports) {
 
   module.exports = require("react-dom");
