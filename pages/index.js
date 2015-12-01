@@ -8,8 +8,8 @@ import React, { Component } from 'react'
 import AvatarEditor from 'react-avatar-editor'
 
 const sizes = {
-  picHeight: 300,
-  picWidth: 300,
+  picHeight: 400,
+  picWidth: 400,
   border: 30,
 }
 
@@ -47,11 +47,15 @@ export default class extends Component {
           <button onClick={this.processImage.bind(this)}>Process</button>
         </div>
         <div>
-          <canvas
-            ref='canvas'
-            width={900}
-            height={600}></canvas>
+          <img
+            src={this.state.processedImage}
+            style={{width: 600}} />
         </div>
+        <canvas
+          ref='canvas'
+          width={sizes.picWidth * 3}
+          height={sizes.picHeight * 2}
+          style={{display: 'none'}}></canvas>
       </div>
     )
   }
@@ -63,7 +67,6 @@ export default class extends Component {
   processImage () {
     const dataUrl = this.refs.editor.getImage()
     this.drawCanvas(dataUrl)
-    this.setState({ processedImage: dataUrl })
   }
 
   drawCanvas (dataUrl) {
@@ -78,5 +81,6 @@ export default class extends Component {
         ctx.drawImage(img, x * canvas.width / 3, y * canvas.height / 2)
       }
     }
+    this.setState({ processedImage: canvas.toDataURL() })
   }
 }
