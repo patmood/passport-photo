@@ -10,7 +10,10 @@ import AvatarEditor from 'react-avatar-editor'
 export default class extends Component {
   constructor(props) {
     super(props)
-    this.state = { scale: 1 }
+    this.state = {
+      scale: 1,
+      processedImage: '',
+    }
   }
 
   render () {
@@ -23,14 +26,28 @@ export default class extends Component {
           width={250}
           height={250}
           border={50}
+          ref='editor'
           scale={this.state.scale} />
-        <input type="range" min={0.1} max={5} step={0.1} defaultValue={this.state.scale} onChange={this.changeScale.bind(this)}/>
+        <input
+          type="range"
+          min={0.1}
+          max={5}
+          step={0.1}
+          defaultValue={parseFloat(this.state.scale)}
+          onChange={this.changeScale.bind(this)} />
+        <button onClick={this.processImage.bind(this)}>Process</button>
+        <img src={this.state.processedImage} />
       </div>
     )
   }
 
   changeScale (e) {
     this.setState({ scale: e.target.value })
+  }
+
+  processImage () {
+    const dataUrl = this.refs.editor.getImage()
+    this.setState({ processedImage: dataUrl })
   }
 
 }
