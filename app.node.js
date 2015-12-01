@@ -917,7 +917,10 @@ module.exports =
       _classCallCheck(this, _default);
 
       _get(Object.getPrototypeOf(_default.prototype), 'constructor', this).call(this, props);
-      this.state = { scale: 1 };
+      this.state = {
+        scale: 1,
+        processedImage: ''
+      };
     }
 
     _createClass(_default, [{
@@ -941,14 +944,33 @@ module.exports =
             width: 250,
             height: 250,
             border: 50,
+            ref: 'editor',
             scale: this.state.scale }),
-          _react2['default'].createElement('input', { type: 'range', min: 0.1, max: 5, step: 0.1, defaultValue: this.state.scale, onChange: this.changeScale.bind(this) })
+          _react2['default'].createElement('input', {
+            type: 'range',
+            min: 0.1,
+            max: 5,
+            step: 0.1,
+            defaultValue: parseFloat(this.state.scale),
+            onChange: this.changeScale.bind(this) }),
+          _react2['default'].createElement(
+            'button',
+            { onClick: this.processImage.bind(this) },
+            'Process'
+          ),
+          _react2['default'].createElement('img', { src: this.state.processedImage })
         );
       }
     }, {
       key: 'changeScale',
       value: function changeScale(e) {
         this.setState({ scale: e.target.value });
+      }
+    }, {
+      key: 'processImage',
+      value: function processImage() {
+        var dataUrl = this.refs.editor.getImage();
+        this.setState({ processedImage: dataUrl });
       }
     }]);
 
