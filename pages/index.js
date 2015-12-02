@@ -28,8 +28,14 @@ export default class extends Component {
       <div>
         <h1>Home Page</h1>
         <p>Standard 135 film & print size in US, Canada, Australia and India. Called "10 × 15 cm" worldwide.</p>
+        <div>
+          <input
+            type='file'
+            onChange={this.getSourceImage.bind(this)}
+          />
+        </div>
         <AvatarEditor
-          image="http://i.imgur.com/y7yZHAF.jpg"
+          image={this.state.sourceImage}
           width={sizes.picWidth}
           height={sizes.picHeight}
           border={sizes.border}
@@ -80,5 +86,22 @@ export default class extends Component {
       }
     }
     this.setState({ processedImage: canvas.toDataURL() })
+  }
+
+  getSourceImage (e) {
+    const file = e.target.files[0]
+    const reader  = new FileReader()
+
+    if (!file.type.match('image')) return console.log('Not an image')
+
+    reader.onloadend = () => {
+      this.setState({ sourceImage: reader.result })
+    }
+
+    if (file) {
+      reader.readAsDataURL(file)
+    } else {
+      new Error('No file detected')
+    }
   }
 }
