@@ -51,11 +51,6 @@ export default class extends Component {
             src={this.state.processedImage}
             style={{width: 600}} />
         </div>
-        <canvas
-          ref='canvas'
-          width={sizes.picWidth * 3}
-          height={sizes.picHeight * 2}
-          style={{display: 'none'}}></canvas>
       </div>
     )
   }
@@ -70,8 +65,11 @@ export default class extends Component {
   }
 
   drawCanvas (dataUrl) {
-    const canvas = this.refs.canvas
+    const canvas = document.createElement('canvas')
     if (!canvas) return console.log('Canvas not supported')
+
+    canvas.width = sizes.picWidth * 3
+    canvas.height = sizes.picHeight * 2
 
     const ctx = canvas.getContext('2d')
     const img = new Image(dataUrl)
