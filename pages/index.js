@@ -54,9 +54,12 @@ export default class extends Component {
           <button onClick={this.processImage.bind(this)}>Process</button>
         </div>
         <div>
+          <a href={this.state.processedImage} download="passport-photo.jpg">
           <img
             src={this.state.processedImage}
             style={{width: 600}} />
+            Download Image
+          </a>
         </div>
       </div>
     )
@@ -102,7 +105,7 @@ export default class extends Component {
       ctx.closePath()
       ctx.stroke()
 
-      this.setState({ processedImage: canvas.toDataURL() })
+      this.setState({ processedImage: canvas.toDataURL('image/jpg') })
     }
 
     img.src = dataUrl
