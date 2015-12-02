@@ -20,6 +20,7 @@ export default class extends Component {
     this.state = {
       scale: 1,
       processedImage: '',
+      sourceImage: 'http://i.imgur.com/y7yZHAF.jpg',
     }
   }
 
@@ -80,11 +81,27 @@ export default class extends Component {
     const ctx = canvas.getContext('2d')
     const img = new Image(dataUrl)
     img.src = dataUrl
+
+    // Images in grid
     for (let x = 0; x <= 3; x++) {
       for (let y = 0; y <= 2; y++) {
         ctx.drawImage(img, x * canvas.width / 3, y * canvas.height / 2)
       }
     }
+
+    // Draw gridlines
+    ctx.strokeStyle = '#333'
+    ctx.lineWidth = 1
+    ctx.beginPath()
+    ctx.moveTo(0, canvas.height / 2)
+    ctx.lineTo(canvas.width, canvas.height / 2)
+    ctx.moveTo(canvas.width / 3, 0)
+    ctx.lineTo(canvas.width / 3, canvas.height)
+    ctx.moveTo(2 * canvas.width / 3, 0)
+    ctx.lineTo(2 * canvas.width / 3, canvas.height)
+    ctx.closePath()
+    ctx.stroke()
+
     this.setState({ processedImage: canvas.toDataURL() })
   }
 
