@@ -925,7 +925,8 @@ module.exports =
       _get(Object.getPrototypeOf(_default.prototype), 'constructor', this).call(this, props);
       this.state = {
         scale: 1,
-        processedImage: ''
+        processedImage: '',
+        sourceImage: 'http://i.imgur.com/y7yZHAF.jpg'
       };
     }
 
@@ -945,8 +946,16 @@ module.exports =
             null,
             'Standard 135 film & print size in US, Canada, Australia and India. Called "10 × 15 cm" worldwide.'
           ),
+          _react2['default'].createElement(
+            'div',
+            null,
+            _react2['default'].createElement('input', {
+              type: 'file',
+              onChange: this.getSourceImage.bind(this)
+            })
+          ),
           _react2['default'].createElement(_reactAvatarEditor2['default'], {
-            image: 'http://i.imgur.com/y7yZHAF.jpg',
+            image: this.state.sourceImage,
             width: sizes.picWidth,
             height: sizes.picHeight,
             border: sizes.border,
@@ -976,15 +985,15 @@ module.exports =
           _react2['default'].createElement(
             'div',
             null,
-            _react2['default'].createElement('img', {
-              src: this.state.processedImage,
-              style: { width: 600 } })
-          ),
-          _react2['default'].createElement('canvas', {
-            ref: 'canvas',
-            width: sizes.picWidth * 3,
-            height: sizes.picHeight * 2,
-            style: { display: 'none' } })
+            _react2['default'].createElement(
+              'a',
+              { href: this.state.processedImage, download: 'passport-photo.jpg' },
+              _react2['default'].createElement('img', {
+                src: this.state.processedImage,
+                style: { width: 600 } }),
+              'Download Image'
+            )
+          )
         );
       }
     }, {
@@ -1001,18 +1010,62 @@ module.exports =
     }, {
       key: 'drawCanvas',
       value: function drawCanvas(dataUrl) {
-        var canvas = this.refs.canvas;
+        var _this = this;
+
+        var canvas = document.createElement('canvas');
         if (!canvas) return console.log('Canvas not supported');
 
+        canvas.width = sizes.picWidth * 3;
+        canvas.height = sizes.picHeight * 2;
+
         var ctx = canvas.getContext('2d');
-        var img = new Image(dataUrl);
-        img.src = dataUrl;
-        for (var x = 0; x <= 3; x++) {
-          for (var y = 0; y <= 2; y++) {
-            ctx.drawImage(img, x * canvas.width / 3, y * canvas.height / 2);
+        var img = new Image();
+
+        img.onload = function () {
+          // Images in grid
+          for (var x = 0; x <= 3; x++) {
+            for (var y = 0; y <= 2; y++) {
+              ctx.drawImage(img, x * canvas.width / 3, y * canvas.height / 2);
+            }
           }
+
+          // Draw gridlines
+          ctx.strokeStyle = '#333';
+          ctx.lineWidth = 1;
+          ctx.beginPath();
+          ctx.moveTo(0, canvas.height / 2);
+          ctx.lineTo(canvas.width, canvas.height / 2);
+          ctx.moveTo(canvas.width / 3, 0);
+          ctx.lineTo(canvas.width / 3, canvas.height);
+          ctx.moveTo(2 * canvas.width / 3, 0);
+          ctx.lineTo(2 * canvas.width / 3, canvas.height);
+          ctx.closePath();
+          ctx.stroke();
+
+          _this.setState({ processedImage: canvas.toDataURL('image/jpg') });
+        };
+
+        img.src = dataUrl;
+      }
+    }, {
+      key: 'getSourceImage',
+      value: function getSourceImage(e) {
+        var _this2 = this;
+
+        var file = e.target.files[0];
+        var reader = new FileReader();
+
+        if (!file.type.match('image')) return console.log('Not an image');
+
+        reader.onloadend = function () {
+          _this2.setState({ sourceImage: reader.result });
+        };
+
+        if (file) {
+          reader.readAsDataURL(file);
+        } else {
+          new Error('No file detected');
         }
-        this.setState({ processedImage: canvas.toDataURL() });
       }
     }]);
 
