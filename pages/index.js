@@ -8,9 +8,9 @@ import React, { Component } from 'react'
 import AvatarEditor from 'react-avatar-editor'
 
 const sizes = {
-  picHeight: 400,
-  picWidth: 400,
-  border: 30,
+  picHeight: 600,
+  picWidth: 600,
+  border: 0,
 }
 
 
@@ -24,6 +24,10 @@ export default class extends Component {
     }
   }
 
+  componentDidMount () {
+    this.drawCircleOverlay()
+  }
+
   render () {
     return (
       <div>
@@ -35,13 +39,21 @@ export default class extends Component {
             onChange={this.getSourceImage.bind(this)}
           />
         </div>
-        <AvatarEditor
-          image={this.state.sourceImage}
-          width={sizes.picWidth}
-          height={sizes.picHeight}
-          border={sizes.border}
-          ref='editor'
-          scale={this.state.scale} />
+        <div style={{ position: 'relative' }}>
+          <AvatarEditor
+            image={this.state.sourceImage}
+            width={sizes.picWidth}
+            height={sizes.picHeight}
+            border={sizes.border}
+            ref='editor'
+            scale={this.state.scale} />
+          <canvas
+            width={sizes.picWidth}
+            height={sizes.picHeight}
+            ref='circleOverlay'
+            style={{ pointerEvents: 'none', position: 'absolute', top: 0, left: 0 }}>
+          </canvas>
+        </div>
         <div>
           <label>Zoom:</label>
           <input
@@ -63,6 +75,10 @@ export default class extends Component {
         </div>
       </div>
     )
+  }
+
+  componentDidUpdate () {
+    this.drawCircleOverlay()
   }
 
   changeScale (e) {
@@ -109,6 +125,21 @@ export default class extends Component {
     }
 
     img.src = dataUrl
+  }
+
+  drawCircleOverlay () {
+    const canvas = this.refs.circleOverlay
+    const context = canvas.getContext('2d')
+    var centerX = canvas.width / 2
+    var centerY = canvas.height * 0.4
+    var radius = canvas.width * 0.2
+
+    context.beginPath()
+    context.strokeStyle = '#003300'
+    context.lineWidth = 5
+    context.arc(centerX, centerY, radius, 0, 2 * Math.PI, false)
+    context.stroke()
+    context.closePath()
   }
 
   getSourceImage (e) {
