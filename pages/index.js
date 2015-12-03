@@ -5,6 +5,8 @@
  */
 
 import React, { Component } from 'react'
+import './index.scss'
+
 import AvatarEditor from 'react-avatar-editor'
 
 const sizes = {
@@ -30,8 +32,8 @@ export default class extends Component {
 
   render () {
     return (
-      <div>
-        <h1>Home Page</h1>
+      <div className='Index'>
+        <h1>Passport Photo Maker</h1>
         <p>Standard 135 film & print size in US, Canada, Australia and India. Called "10 × 15 cm" worldwide.</p>
         <div>
           <input

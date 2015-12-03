@@ -16,22 +16,13 @@ html, body {
 
 .Layout {
   margin: 0 auto;
+  max-width: 800px;
+  margin-bottom: 40px;
 }
 
-@media (min-width: $screen-sm-min) {
-  .Layout {
-    width: calc($screen-sm-min - 18px);
-  }
-}
-
-@media (min-width: $screen-md-min) {
-  .Layout {
-    width: calc($screen-md-min - 22px);
-  }
-}
-
-@media (min-width: $screen-lg-min) {
-  .Layout {
-    width: calc($screen-lg-min - 30px);
-  }
+.container {
+  border: 1px solid #999;
+  border-radius: 5px;
+  padding: 20px;
+  background-color: #fff;
 }
