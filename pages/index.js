@@ -8,6 +8,7 @@ import React, { Component } from 'react'
 import './index.scss'
 
 import AvatarEditor from 'react-avatar-editor'
+import PhotoStandard from '../components/PhotoStandard'
 
 const sizes = {
   picHeight: 600,
@@ -72,18 +73,7 @@ export default class extends Component {
         <div>
           <button onClick={this.processImage.bind(this)} className='btn btn-green'>Process</button>
         </div>
-        <div>
-          <p>Print this image at your local pharmacy or photo kiosk as a standard size photo. A single photo should cost $0.10-0.30</p>
-          <p>This is standard photo print size in US, Canada, Australia and India. Called "10 × 15 cm" worldwide.</p>
-          <a href={this.state.processedImage} download="passport-photo.jpg">
-            <img
-              src={this.state.processedImage}
-              style={{width: 600, margin: 'auto'}} />
-            <div>
-              Download Image
-            </div>
-          </a>
-        </div>
+        <PhotoStandard image={this.state.processedImage}/>
       </div>
     )
   }
@@ -160,7 +150,10 @@ export default class extends Component {
     if (!file.type.match('image')) return console.log('Not an image')
 
     reader.onloadend = () => {
-      this.setState({ sourceImage: reader.result })
+      this.setState({
+        sourceImage: reader.result,
+        processedImage: null,
+      })
     }
 
     if (file) {
