@@ -65,7 +65,7 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _reactDom = __webpack_require__(22);
+  var _reactDom = __webpack_require__(24);
 
   var _reactDom2 = _interopRequireDefault(_reactDom);
 
@@ -81,19 +81,19 @@ module.exports =
 
   var routes = {
     '/404': function _() {
-      return __webpack_require__(8);
-    }, '/500': function _() {
       return __webpack_require__(9);
-    }, '/about': function about() {
+    }, '/500': function _() {
       return __webpack_require__(10);
-    }, '/blog': function blog() {
+    }, '/about': function about() {
       return __webpack_require__(11);
-    }, '/blog/test-article-one': function blogTestArticleOne() {
+    }, '/blog': function blog() {
       return __webpack_require__(12);
-    }, '/blog/test-article-two': function blogTestArticleTwo() {
+    }, '/blog/test-article-one': function blogTestArticleOne() {
       return __webpack_require__(13);
-    }, '/': function _() {
+    }, '/blog/test-article-two': function blogTestArticleTwo() {
       return __webpack_require__(14);
+    }, '/': function _() {
+      return __webpack_require__(15);
     } }; // Auto-generated on build. See tools/lib/routes-loader.js
 
   var route = function route(path, callback) {
@@ -238,15 +238,15 @@ module.exports =
 
   var _fbjsLibExecutionEnvironment = __webpack_require__(4);
 
-  var _historyLibCreateBrowserHistory = __webpack_require__(18);
+  var _historyLibCreateBrowserHistory = __webpack_require__(20);
 
   var _historyLibCreateBrowserHistory2 = _interopRequireDefault(_historyLibCreateBrowserHistory);
 
-  var _historyLibCreateMemoryHistory = __webpack_require__(19);
+  var _historyLibCreateMemoryHistory = __webpack_require__(21);
 
   var _historyLibCreateMemoryHistory2 = _interopRequireDefault(_historyLibCreateMemoryHistory);
 
-  var _historyLibUseQueries = __webpack_require__(20);
+  var _historyLibUseQueries = __webpack_require__(22);
 
   var _historyLibUseQueries2 = _interopRequireDefault(_historyLibUseQueries);
 
@@ -283,7 +283,7 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  __webpack_require__(15);
+  __webpack_require__(16);
 
   var _Navigation = __webpack_require__(7);
 
@@ -296,7 +296,11 @@ module.exports =
       'div',
       { className: 'Layout' },
       _react2['default'].createElement(_Navigation2['default'], null),
-      children
+      _react2['default'].createElement(
+        'div',
+        { className: 'container' },
+        children
+      )
     );
   }
 
@@ -343,7 +347,7 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  __webpack_require__(16);
+  __webpack_require__(17);
 
   var _coreLocation = __webpack_require__(3);
 
@@ -446,7 +450,7 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  __webpack_require__(17);
+  __webpack_require__(18);
 
   var _Link = __webpack_require__(6);
 
@@ -482,6 +486,58 @@ module.exports =
 
 /***/ },
 /* 8 */
+/***/ function(module, exports, __webpack_require__) {
+
+  'use strict';
+
+  Object.defineProperty(exports, '__esModule', {
+    value: true
+  });
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  exports['default'] = function (props) {
+    if (!props.image) return _react2['default'].createElement('div', null);
+    return _react2['default'].createElement(
+      'div',
+      null,
+      _react2['default'].createElement(
+        'p',
+        null,
+        'Print this image at your local pharmacy or photo kiosk as a standard size photo. A single photo should cost $0.10-0.30'
+      ),
+      _react2['default'].createElement(
+        'p',
+        null,
+        'This is standard photo print size in US, Canada, Australia and India. Called "10 × 15 cm" worldwide.'
+      ),
+      _react2['default'].createElement(
+        'a',
+        { href: props.image, download: 'passport-photo.jpg' },
+        _react2['default'].createElement('img', {
+          src: props.image,
+          style: { width: 600, margin: 'auto' } }),
+        _react2['default'].createElement(
+          'div',
+          null,
+          _react2['default'].createElement(
+            'button',
+            { className: 'btn' },
+            'Download Image'
+          )
+        )
+      )
+    );
+  };
+
+  module.exports = exports['default'];
+
+/***/ },
+/* 9 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -546,7 +602,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 9 */
+/* 10 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -617,7 +673,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 10 */
+/* 11 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -682,7 +738,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 11 */
+/* 12 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -747,7 +803,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 12 */
+/* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -812,7 +868,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 13 */
+/* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -877,7 +933,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 14 */
+/* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -906,14 +962,20 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _reactAvatarEditor = __webpack_require__(21);
+  __webpack_require__(19);
+
+  var _reactAvatarEditor = __webpack_require__(23);
 
   var _reactAvatarEditor2 = _interopRequireDefault(_reactAvatarEditor);
 
+  var _componentsPhotoStandard = __webpack_require__(8);
+
+  var _componentsPhotoStandard2 = _interopRequireDefault(_componentsPhotoStandard);
+
   var sizes = {
-    picHeight: 400,
-    picWidth: 400,
-    border: 30
+    picHeight: 600,
+    picWidth: 600,
+    border: 0
   };
 
   var _default = (function (_Component) {
@@ -931,36 +993,65 @@ module.exports =
     }
 
     _createClass(_default, [{
+      key: 'componentDidMount',
+      value: function componentDidMount() {
+        this.drawCircleOverlay();
+      }
+    }, {
       key: 'render',
       value: function render() {
         return _react2['default'].createElement(
           'div',
-          null,
+          { className: 'Index' },
           _react2['default'].createElement(
             'h1',
             null,
-            'Home Page'
+            'Passport Photo Maker'
           ),
           _react2['default'].createElement(
             'p',
             null,
-            'Standard 135 film & print size in US, Canada, Australia and India. Called "10 × 15 cm" worldwide.'
+            'Photo shops charge around $20 for a set of passport photos!'
+          ),
+          _react2['default'].createElement(
+            'p',
+            null,
+            'Make your own and print them at a standard photo kiosk for as little as $0.10'
           ),
           _react2['default'].createElement(
             'div',
-            null,
+            { className: 'upload-box' },
+            _react2['default'].createElement(
+              'p',
+              null,
+              'Upload your photo:'
+            ),
             _react2['default'].createElement('input', {
               type: 'file',
               onChange: this.getSourceImage.bind(this)
             })
           ),
-          _react2['default'].createElement(_reactAvatarEditor2['default'], {
-            image: this.state.sourceImage,
-            width: sizes.picWidth,
-            height: sizes.picHeight,
-            border: sizes.border,
-            ref: 'editor',
-            scale: this.state.scale }),
+          _react2['default'].createElement(
+            'p',
+            null,
+            'Zoom and crop your photo below:'
+          ),
+          _react2['default'].createElement(
+            'div',
+            { style: { position: 'relative', width: sizes.picWidth, margin: 'auto' } },
+            _react2['default'].createElement(_reactAvatarEditor2['default'], {
+              image: this.state.sourceImage,
+              width: sizes.picWidth,
+              height: sizes.picHeight,
+              border: sizes.border,
+              ref: 'editor',
+              scale: this.state.scale }),
+            _react2['default'].createElement('canvas', {
+              width: sizes.picWidth,
+              height: sizes.picHeight,
+              ref: 'circleOverlay',
+              style: { pointerEvents: 'none', position: 'absolute', top: 0, left: 0 } })
+          ),
           _react2['default'].createElement(
             'div',
             null,
@@ -975,26 +1066,24 @@ module.exports =
               max: 5,
               step: 0.1,
               defaultValue: this.state.scale,
-              onChange: this.changeScale.bind(this) }),
-            _react2['default'].createElement(
-              'button',
-              { onClick: this.processImage.bind(this) },
-              'Process'
-            )
+              onChange: this.changeScale.bind(this) })
           ),
           _react2['default'].createElement(
             'div',
             null,
             _react2['default'].createElement(
-              'a',
-              { href: this.state.processedImage, download: 'passport-photo.jpg' },
-              _react2['default'].createElement('img', {
-                src: this.state.processedImage,
-                style: { width: 600 } }),
-              'Download Image'
+              'button',
+              { onClick: this.processImage.bind(this), className: 'btn btn-green' },
+              'Process'
             )
-          )
+          ),
+          _react2['default'].createElement(_componentsPhotoStandard2['default'], { image: this.state.processedImage })
         );
+      }
+    }, {
+      key: 'componentDidUpdate',
+      value: function componentDidUpdate() {
+        this.drawCircleOverlay();
       }
     }, {
       key: 'changeScale',
@@ -1048,6 +1137,22 @@ module.exports =
         img.src = dataUrl;
       }
     }, {
+      key: 'drawCircleOverlay',
+      value: function drawCircleOverlay() {
+        var canvas = this.refs.circleOverlay;
+        var context = canvas.getContext('2d');
+        var centerX = canvas.width / 2;
+        var centerY = canvas.height * 0.4;
+        var radius = canvas.width * 0.2;
+
+        context.beginPath();
+        context.strokeStyle = '#003300';
+        context.lineWidth = 5;
+        context.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
+        context.stroke();
+        context.closePath();
+      }
+    }, {
       key: 'getSourceImage',
       value: function getSourceImage(e) {
         var _this2 = this;
@@ -1058,7 +1163,10 @@ module.exports =
         if (!file.type.match('image')) return console.log('Not an image');
 
         reader.onloadend = function () {
-          _this2.setState({ sourceImage: reader.result });
+          _this2.setState({
+            sourceImage: reader.result,
+            processedImage: null
+          });
         };
 
         if (file) {
@@ -1076,20 +1184,6 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 15 */
-/***/ function(module, exports, __webpack_require__) {
-
-  exports = module.exports = __webpack_require__(2)();
-  // imports
-
-
-  // module
-  exports.push([module.id, "/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n\n/*\n * Media queries breakpoints\n * -------------------------------------------------------------------------- */\n\nhtml, body {\n  margin: 0;\n  padding: 0;\n  background-color: #f7f7f7;\n  color: #333;\n  font-family: 'Roboto','Helvetica',sans-serif;\n}\n\n.Layout {\n  margin: 0 auto;\n}\n\n@media (min-width: 768px) {\n  .Layout {\n    width: calc(768px - 18px);\n  }\n}\n\n@media (min-width: 992px) {\n  .Layout {\n    width: calc(992px - 22px);\n  }\n}\n\n@media (min-width: 1200px) {\n  .Layout {\n    width: calc(1200px - 30px);\n  }\n}\n", ""]);
-
-  // exports
-
-
-/***/ },
 /* 16 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -1098,7 +1192,7 @@ module.exports =
 
 
   // module
-  exports.push([module.id, "/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n.Link {\n\n}\n", ""]);
+  exports.push([module.id, "/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n\n/*\n * Media queries breakpoints\n * -------------------------------------------------------------------------- */\n\nhtml, body {\n  margin: 0;\n  padding: 0;\n  background-color: #f7f7f7;\n  color: #333;\n  font-family: 'Roboto','Helvetica',sans-serif;\n}\n\n.Layout {\n  margin: 0 auto;\n  max-width: 800px;\n  margin-bottom: 40px;\n}\n\n.container {\n  border: 1px solid #999;\n  border-radius: 5px;\n  padding: 20px;\n  background-color: #fff;\n}\n", ""]);
 
   // exports
 
@@ -1112,37 +1206,65 @@ module.exports =
 
 
   // module
-  exports.push([module.id, "/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n\n/*\n * Media queries breakpoints\n * -------------------------------------------------------------------------- */\n\n.Navigation {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: row;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  margin: 2em 0 5em 0;\n  list-style: none;\n  -webkit-box-pack: end;\n  -webkit-justify-content: flex-end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n}\n\n.Navigation-item {\n  padding: 0 2em;\n}\n\n.Navigation-link {\n  padding: 0.5em 1em;\n  color: #21ce99;\n  text-decoration: none;\n  text-transform: uppercase;\n  cursor: pointer;\n}\n\n.Navigation-link:hover {\n  border-bottom: 3px solid #21ce99;\n  color: #333;\n}\n", ""]);
+  exports.push([module.id, "/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n.Link {\n\n}\n", ""]);
 
   // exports
 
 
 /***/ },
 /* 18 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-  module.exports = require("history/lib/createBrowserHistory");
+  exports = module.exports = __webpack_require__(2)();
+  // imports
+
+
+  // module
+  exports.push([module.id, "/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n\n/*\n * Media queries breakpoints\n * -------------------------------------------------------------------------- */\n\n.Navigation {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: row;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  margin: 1em 0 1em 0;\n  list-style: none;\n  -webkit-box-pack: end;\n  -webkit-justify-content: flex-end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n}\n\n.Navigation-item {\n  padding: 0 1em;\n}\n\n.Navigation-link {\n  padding: 0.5em 1em;\n  color: #21ce99;\n  text-decoration: none;\n  text-transform: uppercase;\n  cursor: pointer;\n}\n\n.Navigation-link:hover {\n  border-bottom: 3px solid #21ce99;\n  color: #333;\n}\n", ""]);
+
+  // exports
+
 
 /***/ },
 /* 19 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-  module.exports = require("history/lib/createMemoryHistory");
+  exports = module.exports = __webpack_require__(2)();
+  // imports
+
+
+  // module
+  exports.push([module.id, "/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n\n/*\n * Media queries breakpoints\n * -------------------------------------------------------------------------- */\n\n.btn, .btn-green {\n  background-color: #3498db;\n  color: #fff;\n  text-align: center;\n  font-size: 18px;\n  border: none;\n  border-radius: 3px;\n  position: relative;\n  padding: 0.3em 1em;\n}\n\n.btn:hover, .btn-green:hover {\n  background-color: #2980b9;\n}\n\n.btn-green {\n  background-color: #2ecc71;\n}\n\n.btn-green:hover {\n  background-color: #27ae60;\n}\n\n.Index {\n  text-align: center;\n}\n\n.upload-box {\n  display: inline-block;\n  width: 350px;\n  margin: 10px auto;\n  background-color: #eee;\n  border: 4px dashed #666;\n  border-radius: 10px;\n  padding: 10px;\n}\n\n.upload-box input {\n  margin-bottom: 16px;\n}\n", ""]);
+
+  // exports
+
 
 /***/ },
 /* 20 */
 /***/ function(module, exports) {
 
-  module.exports = require("history/lib/useQueries");
+  module.exports = require("history/lib/createBrowserHistory");
 
 /***/ },
 /* 21 */
 /***/ function(module, exports) {
 
-  module.exports = require("react-avatar-editor");
+  module.exports = require("history/lib/createMemoryHistory");
 
 /***/ },
 /* 22 */
+/***/ function(module, exports) {
+
+  module.exports = require("history/lib/useQueries");
+
+/***/ },
+/* 23 */
+/***/ function(module, exports) {
+
+  module.exports = require("react-avatar-editor");
+
+/***/ },
+/* 24 */
 /***/ function(module, exports) {
 
   module.exports = require("react-dom");
