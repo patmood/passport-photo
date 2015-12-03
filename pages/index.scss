@@ -1,3 +1,41 @@
 .Index {
   text-align: center;
 }
+
+.upload-box {
+  display: inline-block;
+  width: 350px;
+  margin: 10px auto;
+  background-color: #eee;
+  border: 4px dashed #666;
+  border-radius: 10px;
+  padding: 10px;
+
+  input {
+    margin-bottom: 16px;
+  }
+}
+
+.btn {
+  background-color: #95a5a6;
+  color: #fff;
+  text-align: center;
+  font-size: 18px;
+  border: none;
+  border-radius: 3px;
+  position: relative;
+  padding: 0.3em 1em;
+
+  &:hover {
+    background-color: #7f8c8d;
+  }
+}
+
+.btn-green {
+  @extend .btn;
+  background-color: #2ecc71;
+
+  &:hover {
+    background-color: #27ae60;
+  }
+}

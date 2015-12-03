@@ -34,14 +34,17 @@ export default class extends Component {
     return (
       <div className='Index'>
         <h1>Passport Photo Maker</h1>
-        <p>Standard 135 film & print size in US, Canada, Australia and India. Called "10 × 15 cm" worldwide.</p>
-        <div>
+        <p>Photo shops charge around $20 for a set of passport photos!</p>
+        <p>Make your own and print them at a standard photo kiosk for as little as $0.10</p>
+        <div className='upload-box'>
+          <p>Upload your photo:</p>
           <input
             type='file'
             onChange={this.getSourceImage.bind(this)}
           />
         </div>
-        <div style={{ position: 'relative' }}>
+        <p>Zoom and crop your photo below:</p>
+        <div style={{ position: 'relative', width: sizes.picWidth, margin: 'auto' }}>
           <AvatarEditor
             image={this.state.sourceImage}
             width={sizes.picWidth}
@@ -65,14 +68,20 @@ export default class extends Component {
             step={0.1}
             defaultValue={this.state.scale}
             onChange={this.changeScale.bind(this)} />
-          <button onClick={this.processImage.bind(this)}>Process</button>
         </div>
         <div>
+          <button onClick={this.processImage.bind(this)} className='btn btn-green'>Process</button>
+        </div>
+        <div>
+          <p>Print this image at your local pharmacy or photo kiosk as a standard size photo. A single photo should cost $0.10-0.30</p>
+          <p>This is standard photo print size in US, Canada, Australia and India. Called "10 × 15 cm" worldwide.</p>
           <a href={this.state.processedImage} download="passport-photo.jpg">
-          <img
-            src={this.state.processedImage}
-            style={{width: 600}} />
-            Download Image
+            <img
+              src={this.state.processedImage}
+              style={{width: 600, margin: 'auto'}} />
+            <div>
+              Download Image
+            </div>
           </a>
         </div>
       </div>
