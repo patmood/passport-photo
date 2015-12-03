@@ -1,0 +1,25 @@
+@import './variables.scss';
+
+.btn {
+  background-color: $blue;
+  color: #fff;
+  text-align: center;
+  font-size: 18px;
+  border: none;
+  border-radius: 3px;
+  position: relative;
+  padding: 0.3em 1em;
+
+  &:hover {
+    background-color: $blue-dark;
+  }
+}
+
+.btn-green {
+  @extend .btn;
+  background-color: $green;
+
+  &:hover {
+    background-color: $green-dark;
+  }
+}

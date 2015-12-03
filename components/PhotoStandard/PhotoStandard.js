@@ -1,6 +1,6 @@
 import React from 'react';
 
-function PhotoStandard(props) {
+export default function (props) {
   if (!props.image) return <div></div>
   return (
     <div>
@@ -11,11 +11,11 @@ function PhotoStandard(props) {
           src={props.image}
           style={{width: 600, margin: 'auto'}} />
         <div>
-          Download Image
+          <button className='btn'>
+            Download Image
+          </button>
         </div>
       </a>
     </div>
   )
 }
-
-export default PhotoStandard;
