@@ -65,7 +65,7 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _reactDom = __webpack_require__(24);
+  var _reactDom = __webpack_require__(27);
 
   var _reactDom2 = _interopRequireDefault(_reactDom);
 
@@ -81,19 +81,19 @@ module.exports =
 
   var routes = {
     '/404': function _() {
-      return __webpack_require__(9);
-    }, '/500': function _() {
       return __webpack_require__(10);
-    }, '/about': function about() {
+    }, '/500': function _() {
       return __webpack_require__(11);
-    }, '/blog': function blog() {
+    }, '/about': function about() {
       return __webpack_require__(12);
-    }, '/blog/test-article-one': function blogTestArticleOne() {
+    }, '/blog': function blog() {
       return __webpack_require__(13);
-    }, '/blog/test-article-two': function blogTestArticleTwo() {
+    }, '/blog/test-article-one': function blogTestArticleOne() {
       return __webpack_require__(14);
-    }, '/': function _() {
+    }, '/blog/test-article-two': function blogTestArticleTwo() {
       return __webpack_require__(15);
+    }, '/': function _() {
+      return __webpack_require__(16);
     } }; // Auto-generated on build. See tools/lib/routes-loader.js
 
   var route = function route(path, callback) {
@@ -238,15 +238,15 @@ module.exports =
 
   var _fbjsLibExecutionEnvironment = __webpack_require__(4);
 
-  var _historyLibCreateBrowserHistory = __webpack_require__(20);
+  var _historyLibCreateBrowserHistory = __webpack_require__(22);
 
   var _historyLibCreateBrowserHistory2 = _interopRequireDefault(_historyLibCreateBrowserHistory);
 
-  var _historyLibCreateMemoryHistory = __webpack_require__(21);
+  var _historyLibCreateMemoryHistory = __webpack_require__(23);
 
   var _historyLibCreateMemoryHistory2 = _interopRequireDefault(_historyLibCreateMemoryHistory);
 
-  var _historyLibUseQueries = __webpack_require__(22);
+  var _historyLibUseQueries = __webpack_require__(24);
 
   var _historyLibUseQueries2 = _interopRequireDefault(_historyLibUseQueries);
 
@@ -283,7 +283,7 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  __webpack_require__(16);
+  __webpack_require__(17);
 
   var _Navigation = __webpack_require__(7);
 
@@ -347,7 +347,7 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  __webpack_require__(17);
+  __webpack_require__(18);
 
   var _coreLocation = __webpack_require__(3);
 
@@ -450,7 +450,7 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  __webpack_require__(18);
+  __webpack_require__(19);
 
   var _Link = __webpack_require__(6);
 
@@ -540,6 +540,32 @@ module.exports =
 /* 9 */
 /***/ function(module, exports, __webpack_require__) {
 
+  'use strict';
+
+  Object.defineProperty(exports, '__esModule', {
+    value: true
+  });
+
+  var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  __webpack_require__(20);
+
+  exports['default'] = function (props) {
+    return _react2['default'].createElement('input', _extends({}, props, { type: 'range' }));
+  };
+
+  module.exports = exports['default'];
+
+/***/ },
+/* 10 */
+/***/ function(module, exports, __webpack_require__) {
+
   /**
    * React Static Boilerplate
    * https://github.com/koistya/react-static-boilerplate
@@ -602,7 +628,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 10 */
+/* 11 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -673,7 +699,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 11 */
+/* 12 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -738,7 +764,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 12 */
+/* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -803,7 +829,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 13 */
+/* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -868,7 +894,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 14 */
+/* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -933,7 +959,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 15 */
+/* 16 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -962,15 +988,21 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  __webpack_require__(19);
+  __webpack_require__(21);
 
-  var _reactAvatarEditor = __webpack_require__(23);
+  var _reactAvatarEditor = __webpack_require__(26);
 
   var _reactAvatarEditor2 = _interopRequireDefault(_reactAvatarEditor);
 
   var _componentsPhotoStandard = __webpack_require__(8);
 
   var _componentsPhotoStandard2 = _interopRequireDefault(_componentsPhotoStandard);
+
+  var _componentsRangeInput = __webpack_require__(9);
+
+  var _componentsRangeInput2 = _interopRequireDefault(_componentsRangeInput);
+
+  var _lodash = __webpack_require__(25);
 
   var sizes = {
     picHeight: 600,
@@ -990,6 +1022,7 @@ module.exports =
         processedImage: '',
         sourceImage: 'http://i.imgur.com/y7yZHAF.jpg'
       };
+      this.changeScale = this.changeScale.bind(this);
     }
 
     _createClass(_default, [{
@@ -1050,23 +1083,39 @@ module.exports =
               width: sizes.picWidth,
               height: sizes.picHeight,
               ref: 'circleOverlay',
-              style: { pointerEvents: 'none', position: 'absolute', top: 0, left: 0 } })
+              style: { pointerEvents: 'none', position: 'absolute', top: 0, left: 0 } }),
+            _react2['default'].createElement('i', {
+              onClick: (0, _lodash.partial)(this.changeScale, -0.1),
+              className: 'fa fa-minus-circle',
+              style: { position: 'absolute', top: 30, left: 30, fontSize: 82 } }),
+            _react2['default'].createElement('i', {
+              onClick: (0, _lodash.partial)(this.changeScale, 0.1),
+              className: 'fa fa-plus-circle',
+              style: { position: 'absolute', top: 30, right: 30, fontSize: 82 } })
           ),
           _react2['default'].createElement(
             'div',
-            null,
+            { className: 'zoom-controls' },
             _react2['default'].createElement(
-              'label',
-              null,
-              'Zoom:'
+              'div',
+              { className: 'zoom-out' },
+              _react2['default'].createElement('i', { className: 'fa fa-minus' })
             ),
-            _react2['default'].createElement('input', {
-              type: 'range',
-              min: 0.1,
-              max: 5,
-              step: 0.1,
-              defaultValue: this.state.scale,
-              onChange: this.changeScale.bind(this) })
+            _react2['default'].createElement(
+              'div',
+              { className: 'slider' },
+              _react2['default'].createElement(_componentsRangeInput2['default'], {
+                min: 0.1,
+                max: 5,
+                step: 0.1,
+                defaultValue: this.state.scale,
+                onChange: this.handleRangeChange.bind(this) })
+            ),
+            _react2['default'].createElement(
+              'div',
+              { className: 'zoom-in' },
+              _react2['default'].createElement('i', { className: 'fa fa-plus' })
+            )
           ),
           _react2['default'].createElement(
             'div',
@@ -1086,9 +1135,15 @@ module.exports =
         this.drawCircleOverlay();
       }
     }, {
-      key: 'changeScale',
-      value: function changeScale(e) {
+      key: 'handleRangeChange',
+      value: function handleRangeChange(e) {
         this.setState({ scale: parseFloat(e.target.value) });
+      }
+    }, {
+      key: 'changeScale',
+      value: function changeScale(delta) {
+        var scale = this.state.scale + delta;
+        this.setState({ scale: scale });
       }
     }, {
       key: 'processImage',
@@ -1184,20 +1239,6 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 16 */
-/***/ function(module, exports, __webpack_require__) {
-
-  exports = module.exports = __webpack_require__(2)();
-  // imports
-
-
-  // module
-  exports.push([module.id, "/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n\n/*\n * Media queries breakpoints\n * -------------------------------------------------------------------------- */\n\nhtml, body {\n  margin: 0;\n  padding: 0;\n  background-color: #f7f7f7;\n  color: #333;\n  font-family: 'Roboto','Helvetica',sans-serif;\n}\n\n.Layout {\n  margin: 0 auto;\n  max-width: 800px;\n  margin-bottom: 40px;\n}\n\n.container {\n  border: 1px solid #999;\n  border-radius: 5px;\n  padding: 20px;\n  background-color: #fff;\n}\n", ""]);
-
-  // exports
-
-
-/***/ },
 /* 17 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -1206,7 +1247,7 @@ module.exports =
 
 
   // module
-  exports.push([module.id, "/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n.Link {\n\n}\n", ""]);
+  exports.push([module.id, "/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n\n/*\n * Media queries breakpoints\n * -------------------------------------------------------------------------- */\n\nhtml, body {\n  margin: 0;\n  padding: 0;\n  background-color: #f7f7f7;\n  color: #333;\n  font-family: 'Roboto','Helvetica',sans-serif;\n}\n\n.Layout {\n  margin: 0 auto;\n  max-width: 800px;\n  margin-bottom: 40px;\n  min-width: 640px;\n}\n\n.container {\n  border: 1px solid #999;\n  border-radius: 5px;\n  padding: 20px;\n  background-color: #fff;\n}\n", ""]);
 
   // exports
 
@@ -1220,7 +1261,7 @@ module.exports =
 
 
   // module
-  exports.push([module.id, "/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n\n/*\n * Media queries breakpoints\n * -------------------------------------------------------------------------- */\n\n.Navigation {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: row;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  margin: 1em 0 1em 0;\n  list-style: none;\n  -webkit-box-pack: end;\n  -webkit-justify-content: flex-end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n}\n\n.Navigation-item {\n  padding: 0 1em;\n}\n\n.Navigation-link {\n  padding: 0.5em 1em;\n  color: #21ce99;\n  text-decoration: none;\n  text-transform: uppercase;\n  cursor: pointer;\n}\n\n.Navigation-link:hover {\n  border-bottom: 3px solid #21ce99;\n  color: #333;\n}\n", ""]);
+  exports.push([module.id, "/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n.Link {\n\n}\n", ""]);
 
   // exports
 
@@ -1234,37 +1275,71 @@ module.exports =
 
 
   // module
-  exports.push([module.id, "/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n\n/*\n * Media queries breakpoints\n * -------------------------------------------------------------------------- */\n\n.btn, .btn-green {\n  background-color: #3498db;\n  color: #fff;\n  text-align: center;\n  font-size: 18px;\n  border: none;\n  border-radius: 3px;\n  position: relative;\n  padding: 0.3em 1em;\n}\n\n.btn:hover, .btn-green:hover {\n  background-color: #2980b9;\n}\n\n.btn-green {\n  background-color: #2ecc71;\n}\n\n.btn-green:hover {\n  background-color: #27ae60;\n}\n\n.Index {\n  text-align: center;\n}\n\n.upload-box {\n  display: inline-block;\n  width: 350px;\n  margin: 10px auto;\n  background-color: #eee;\n  border: 4px dashed #666;\n  border-radius: 10px;\n  padding: 10px;\n}\n\n.upload-box input {\n  margin-bottom: 16px;\n}\n", ""]);
+  exports.push([module.id, "/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n\n/*\n * Media queries breakpoints\n * -------------------------------------------------------------------------- */\n\n.Navigation {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: row;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  margin: 1em 0 1em 0;\n  list-style: none;\n  -webkit-box-pack: end;\n  -webkit-justify-content: flex-end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n}\n\n.Navigation-item {\n  padding: 0 1em;\n}\n\n.Navigation-link {\n  padding: 0.5em 1em;\n  color: #21ce99;\n  text-decoration: none;\n  text-transform: uppercase;\n  cursor: pointer;\n}\n\n.Navigation-link:hover {\n  border-bottom: 3px solid #21ce99;\n  color: #333;\n}\n", ""]);
 
   // exports
 
 
 /***/ },
 /* 20 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-  module.exports = require("history/lib/createBrowserHistory");
+  exports = module.exports = __webpack_require__(2)();
+  // imports
+
+
+  // module
+  exports.push([module.id, "input[type=range] {\n  -webkit-appearance: none;\n  width: 100%;\n  margin: 13.8px 0;\n}\n\ninput[type=range]:focus {\n  outline: none;\n}\n\ninput[type=range]::-webkit-slider-runnable-track {\n  width: 100%;\n  height: 8.4px;\n  cursor: pointer;\n  -webkit-box-shadow: 1px 1px 1px #250000, 0px 0px 1px #3f0000;\n          box-shadow: 1px 1px 1px #250000, 0px 0px 1px #3f0000;\n  background: rgb(210, 210, 210);\n  border-radius: 1.3px;\n  border: 0.2px solid #010101;\n}\n\ninput[type=range]::-webkit-slider-thumb {\n  -webkit-box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;\n          box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;\n  border: 1px solid #000000;\n  height: 36px;\n  width: 20px;\n  border-radius: 3px;\n  background: rgb(16, 127, 230);\n  cursor: pointer;\n  -webkit-appearance: none;\n  margin-top: -14px;\n}\n\ninput[type=range]:focus::-webkit-slider-runnable-track {\n  background: #8eb9df;\n}\n\ninput[type=range]::-moz-range-track {\n  width: 100%;\n  height: 8.4px;\n  cursor: pointer;\n  box-shadow: 1px 1px 1px #250000, 0px 0px 1px #3f0000;\n  background: rgb(210, 210, 210);\n  border-radius: 1.3px;\n  border: 0.2px solid #010101;\n}\n\ninput[type=range]::-moz-range-thumb {\n  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;\n  border: 1px solid #000000;\n  height: 36px;\n  width: 16px;\n  border-radius: 3px;\n  background: rgb(16, 127, 230);\n  cursor: pointer;\n}\n\ninput[type=range]::-ms-track {\n  width: 100%;\n  height: 8.4px;\n  cursor: pointer;\n  background: transparent;\n  border-color: transparent;\n  color: transparent;\n}\n\ninput[type=range]::-ms-fill-lower {\n  background: #0f2436;\n  border: 0.2px solid #010101;\n  border-radius: 2.6px;\n  box-shadow: 1px 1px 1px #250000, 0px 0px 1px #3f0000;\n}\n\ninput[type=range]::-ms-fill-upper {\n  background: rgb(210, 210, 210);\n  border: 0.2px solid #010101;\n  border-radius: 2.6px;\n  box-shadow: 1px 1px 1px #250000, 0px 0px 1px #3f0000;\n}\n\ninput[type=range]::-ms-thumb {\n  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;\n  border: 1px solid #000000;\n  height: 36px;\n  width: 16px;\n  border-radius: 3px;\n  background: rgb(16, 127, 230);\n  cursor: pointer;\n  height: 8.4px;\n}\n\ninput[type=range]:focus::-ms-fill-lower {\n  background: rgb(210, 210, 210);\n}\n\ninput[type=range]:focus::-ms-fill-upper {\n  background: #8eb9df;\n}\n", ""]);
+
+  // exports
+
 
 /***/ },
 /* 21 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-  module.exports = require("history/lib/createMemoryHistory");
+  exports = module.exports = __webpack_require__(2)();
+  // imports
+
+
+  // module
+  exports.push([module.id, "/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n\n/*\n * Media queries breakpoints\n * -------------------------------------------------------------------------- */\n\n.btn, .btn-green {\n  background-color: #3498db;\n  color: #fff;\n  text-align: center;\n  font-size: 18px;\n  border: none;\n  border-radius: 3px;\n  position: relative;\n  padding: 0.6em 1.2em;\n}\n\n.btn:hover, .btn-green:hover {\n  background-color: #2980b9;\n}\n\n.btn-green {\n  background-color: #2ecc71;\n}\n\n.btn-green:hover {\n  background-color: #27ae60;\n}\n\n.Index {\n  text-align: center;\n}\n\n.upload-box {\n  display: inline-block;\n  width: 350px;\n  margin: 10px auto;\n  background-color: #eee;\n  border: 4px dashed #666;\n  border-radius: 10px;\n  padding: 10px;\n}\n\n.upload-box input {\n  margin-bottom: 16px;\n}\n\n.zoom-controls {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  width: 600px;\n  margin: 10px auto;\n}\n\n.zoom-controls .slider {\n  -webkit-box-flex: 1;\n  -webkit-flex-grow: 1;\n      -ms-flex-positive: 1;\n          flex-grow: 1;\n}\n\n.zoom-controls .zoom-in, .zoom-controls .zoom-out {\n  padding: 10px;\n  font-size: 32px;\n}\n", ""]);
+
+  // exports
+
 
 /***/ },
 /* 22 */
 /***/ function(module, exports) {
 
-  module.exports = require("history/lib/useQueries");
+  module.exports = require("history/lib/createBrowserHistory");
 
 /***/ },
 /* 23 */
 /***/ function(module, exports) {
 
-  module.exports = require("react-avatar-editor");
+  module.exports = require("history/lib/createMemoryHistory");
 
 /***/ },
 /* 24 */
+/***/ function(module, exports) {
+
+  module.exports = require("history/lib/useQueries");
+
+/***/ },
+/* 25 */
+/***/ function(module, exports) {
+
+  module.exports = require("lodash");
+
+/***/ },
+/* 26 */
+/***/ function(module, exports) {
+
+  module.exports = require("react-avatar-editor");
+
+/***/ },
+/* 27 */
 /***/ function(module, exports) {
 
   module.exports = require("react-dom");
