@@ -311,8 +311,7 @@ module.exports =
 
       _get(Object.getPrototypeOf(_default.prototype), 'constructor', this).call(this, props);
       this.state = {
-        scale: 1,
-        sourceImage: 'http://i.imgur.com/y7yZHAF.jpg'
+        scale: 1
       };
       this.changeScale = this.changeScale.bind(this);
     }
@@ -320,7 +319,9 @@ module.exports =
     _createClass(_default, [{
       key: 'render',
       value: function render() {
-        var sizes = this.props.sizes;
+        var _props = this.props;
+        var sizes = _props.sizes;
+        var sourceImage = _props.sourceImage;
 
         return _react2['default'].createElement(
           'div',
@@ -329,7 +330,7 @@ module.exports =
             'div',
             { style: { position: 'relative', width: sizes.picWidth, margin: 'auto' } },
             _react2['default'].createElement(_reactAvatarEditor2['default'], {
-              image: this.state.sourceImage,
+              image: sourceImage,
               width: sizes.picWidth,
               height: sizes.picHeight,
               border: sizes.border,
@@ -1241,7 +1242,8 @@ module.exports =
             sizes: sizes,
             ref: 'imageSizer',
             isProcessing: this.state.isProcessing,
-            processImage: this.processImage.bind(this) }),
+            processImage: this.processImage.bind(this),
+            sourceImage: this.state.sourceImage }),
           _react2['default'].createElement(_componentsPhotoStandard2['default'], { image: this.state.processedImage })
         );
       }
@@ -1250,8 +1252,6 @@ module.exports =
       value: function processImage(dataUrl) {
         this.setState({ isProcessing: true });
         this.drawCanvas(dataUrl);
-        var node = _reactDom2['default'].findDOMNode(this.refs.imageSizer);
-        window.scrollTo(0, node.scrollHeight + node.offsetHeight);
       }
     }, {
       key: 'drawCanvas',
@@ -1292,6 +1292,9 @@ module.exports =
             processedImage: canvas.toDataURL('image/jpg'),
             isProcessing: false
           });
+
+          var node = _reactDom2['default'].findDOMNode(_this.refs.imageSizer);
+          if (window) window.scrollTo(0, node.scrollHeight + node.offsetHeight);
         };
 
         img.src = dataUrl;
@@ -1304,7 +1307,7 @@ module.exports =
         var file = e.target.files[0];
         var reader = new FileReader();
 
-        if (!file.type.match('image')) return console.log('Not an image');
+        if (!file.type.match('image')) return alert('Must be an image :}');
 
         reader.onloadend = function () {
           _this2.setState({
