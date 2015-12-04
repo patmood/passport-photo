@@ -71,14 +71,21 @@ export default class extends Component {
             className='fa fa-plus-circle'
             style={{position: 'absolute', top: 30, right: 30, fontSize: 82}}></i>
         </div>
-        <div style={{width: 600, margin: 'auto'}}>
-          
-          <RangeInput
-            min={0.1}
-            max={5}
-            step={0.1}
-            defaultValue={this.state.scale}
-            onChange={this.handleRangeChange.bind(this)} />
+        <div className='zoom-controls'>
+          <div className='zoom-out'>
+            <i className='fa fa-minus'></i>
+          </div>
+          <div className='slider'>
+            <RangeInput
+              min={0.1}
+              max={5}
+              step={0.1}
+              defaultValue={this.state.scale}
+              onChange={this.handleRangeChange.bind(this)} />
+          </div>
+          <div className='zoom-in'>
+            <i className='fa fa-plus'></i>
+          </div>
         </div>
         <div>
           <button onClick={this.processImage.bind(this)} className='btn btn-green'>Process</button>

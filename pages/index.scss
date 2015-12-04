@@ -17,3 +17,19 @@
     margin-bottom: 16px;
   }
 }
+
+.zoom-controls {
+  display: flex;
+  align-items: center;
+  width: 600px;
+  margin: 10px auto;
+
+  .slider {
+    flex-grow: 1;
+  }
+
+  .zoom-in, .zoom-out {
+    padding: 10px;
+    font-size: 32px;
+  }
+}
