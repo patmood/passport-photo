@@ -46,7 +46,8 @@ export default class extends Component {
           sizes={sizes}
           ref='imageSizer'
           isProcessing={this.state.isProcessing}
-          processImage={this.processImage.bind(this)} />
+          processImage={this.processImage.bind(this)}
+          sourceImage={this.state.sourceImage} />
         <PhotoStandard image={this.state.processedImage} />
       </div>
     )
@@ -55,8 +56,6 @@ export default class extends Component {
   processImage (dataUrl) {
     this.setState({ isProcessing: true })
     this.drawCanvas(dataUrl)
-    const node = ReactDOM.findDOMNode(this.refs.imageSizer)
-    window.scrollTo(0, node.scrollHeight + node.offsetHeight)
   }
 
   drawCanvas (dataUrl) {
@@ -94,6 +93,9 @@ export default class extends Component {
         processedImage: canvas.toDataURL('image/jpg'),
         isProcessing: false,
       })
+
+      const node = ReactDOM.findDOMNode(this.refs.imageSizer)
+      if (window) window.scrollTo(0, node.scrollHeight + node.offsetHeight)
     }
 
     img.src = dataUrl
@@ -103,7 +105,7 @@ export default class extends Component {
     const file = e.target.files[0]
     const reader  = new FileReader()
 
-    if (!file.type.match('image')) return console.log('Not an image')
+    if (!file.type.match('image')) return alert('Must be an image :}')
 
     reader.onloadend = () => {
       this.setState({

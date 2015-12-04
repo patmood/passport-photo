@@ -11,17 +11,16 @@ export default class extends Component {
     super(props)
     this.state = {
       scale: 1,
-      sourceImage: 'http://i.imgur.com/y7yZHAF.jpg',
     }
     this.changeScale = this.changeScale.bind(this)
   }
 
   render () {
-    const { sizes } = this.props
+    const { sizes, sourceImage } = this.props
     return <div>
       <div style={{ position: 'relative', width: sizes.picWidth, margin: 'auto' }}>
         <AvatarEditor
-          image={this.state.sourceImage}
+          image={sourceImage}
           width={sizes.picWidth}
           height={sizes.picHeight}
           border={sizes.border}
