@@ -9,6 +9,7 @@ import './index.scss'
 
 import AvatarEditor from 'react-avatar-editor'
 import PhotoStandard from '../components/PhotoStandard'
+import RangeInput from '../components/RangeInput'
 import { partial } from 'lodash'
 
 const sizes = {
@@ -70,10 +71,9 @@ export default class extends Component {
             className='fa fa-plus-circle'
             style={{position: 'absolute', top: 30, right: 30, fontSize: 82}}></i>
         </div>
-        <div>
-          <label>Zoom:</label>
-          <input
-            type="range"
+        <div style={{width: 600, margin: 'auto'}}>
+          
+          <RangeInput
             min={0.1}
             max={5}
             step={0.1}
