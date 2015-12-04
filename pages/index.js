@@ -26,6 +26,7 @@ export default class extends Component {
       scale: 1,
       processedImage: '',
       sourceImage: 'http://i.imgur.com/y7yZHAF.jpg',
+      isProcessing: false,
     }
     this.changeScale = this.changeScale.bind(this)
   }
@@ -89,7 +90,11 @@ export default class extends Component {
           </div>
         </div>
         <div>
-          <button onClick={this.processImage.bind(this)} className='btn btn-green'>Process</button>
+          <button onClick={this.processImage.bind(this)} className='btn btn-green' style={{ width: 200 }}>
+            { this.state.isProcessing
+              ? <i className='fa fa-cog fa-spin'></i>
+              : 'Process' }
+          </button>
         </div>
         <PhotoStandard image={this.state.processedImage}/>
       </div>
@@ -110,6 +115,7 @@ export default class extends Component {
   }
 
   processImage () {
+    this.setState({ isProcessing: true })
     const dataUrl = this.refs.editor.getImage()
     this.drawCanvas(dataUrl)
   }
@@ -145,7 +151,10 @@ export default class extends Component {
       ctx.closePath()
       ctx.stroke()
 
-      this.setState({ processedImage: canvas.toDataURL('image/jpg') })
+      this.setState({
+        processedImage: canvas.toDataURL('image/jpg'),
+        isProcessing: false,
+      })
     }
 
     img.src = dataUrl
