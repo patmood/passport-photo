@@ -18,6 +18,12 @@
   }
 }
 
+.zoom-overlay-button {
+  position: absolute;
+  font-size: 104px;
+  cursor: pointer;
+}
+
 .zoom-controls {
   display: flex;
   align-items: center;
@@ -31,5 +37,6 @@
   .zoom-in, .zoom-out {
     padding: 10px;
     font-size: 32px;
+    cursor: pointer;
   }
 }

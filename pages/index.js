@@ -64,15 +64,15 @@ export default class extends Component {
           </canvas>
           <i
             onClick={partial(this.changeScale, -0.1)}
-            className='fa fa-minus-circle'
-            style={{position: 'absolute', top: 30, left: 30, fontSize: 82}}></i>
+            className='fa fa-minus-circle zoom-overlay-button'
+            style={{top: 30, left: 30}}></i>
           <i
             onClick={partial(this.changeScale, 0.1)}
-            className='fa fa-plus-circle'
-            style={{position: 'absolute', top: 30, right: 30, fontSize: 82}}></i>
+            className='fa fa-plus-circle zoom-overlay-button'
+            style={{top: 30, right: 30}}></i>
         </div>
         <div className='zoom-controls'>
-          <div className='zoom-out'>
+          <div className='zoom-out' onClick={partial(this.changeScale, -0.1)}>
             <i className='fa fa-minus'></i>
           </div>
           <div className='slider'>
@@ -81,9 +81,10 @@ export default class extends Component {
               max={5}
               step={0.1}
               defaultValue={this.state.scale}
+              value={this.state.scale}
               onChange={this.handleRangeChange.bind(this)} />
           </div>
-          <div className='zoom-in'>
+          <div className='zoom-in' onClick={partial(this.changeScale, 0.1)}>
             <i className='fa fa-plus'></i>
           </div>
         </div>
