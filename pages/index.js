@@ -9,6 +9,7 @@ import './index.scss'
 
 import AvatarEditor from 'react-avatar-editor'
 import PhotoStandard from '../components/PhotoStandard'
+import { partial } from 'lodash'
 
 const sizes = {
   picHeight: 600,
@@ -25,6 +26,7 @@ export default class extends Component {
       processedImage: '',
       sourceImage: 'http://i.imgur.com/y7yZHAF.jpg',
     }
+    this.changeScale = this.changeScale.bind(this)
   }
 
   componentDidMount () {
@@ -59,6 +61,14 @@ export default class extends Component {
             ref='circleOverlay'
             style={{ pointerEvents: 'none', position: 'absolute', top: 0, left: 0 }}>
           </canvas>
+          <i
+            onClick={partial(this.changeScale, -0.1)}
+            className='fa fa-minus-circle'
+            style={{position: 'absolute', top: 30, left: 30, fontSize: 82}}></i>
+          <i
+            onClick={partial(this.changeScale, 0.1)}
+            className='fa fa-plus-circle'
+            style={{position: 'absolute', top: 30, right: 30, fontSize: 82}}></i>
         </div>
         <div>
           <label>Zoom:</label>
@@ -68,7 +78,7 @@ export default class extends Component {
             max={5}
             step={0.1}
             defaultValue={this.state.scale}
-            onChange={this.changeScale.bind(this)} />
+            onChange={this.handleRangeChange.bind(this)} />
         </div>
         <div>
           <button onClick={this.processImage.bind(this)} className='btn btn-green'>Process</button>
@@ -82,8 +92,13 @@ export default class extends Component {
     this.drawCircleOverlay()
   }
 
-  changeScale (e) {
+  handleRangeChange (e) {
     this.setState({ scale: parseFloat(e.target.value) })
+  }
+
+  changeScale (delta) {
+    const scale = this.state.scale + delta
+    this.setState({ scale })
   }
 
   processImage () {

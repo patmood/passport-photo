@@ -5,7 +5,7 @@
  */
 
 export default {
-  title: 'React Static Boilerplate',
-  description: 'Static website generator for React.js web applications.',
+  title: 'Passport Picture Maker',
+  description: 'Create the perfect size passport photo for cheap printing',
   googleAnalyticsId: 'UA-XXXXX-X',
 };

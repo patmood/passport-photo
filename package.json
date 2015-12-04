@@ -49,6 +49,7 @@
     "deploy": "babel-node --eval \"require('./tools/deploy')().catch(err => console.log(err.stack))\""
   },
   "dependencies": {
+    "lodash": "^3.10.1",
     "react-avatar-editor": "^3.1.0"
   }
 }
