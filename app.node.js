@@ -65,7 +65,7 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _reactDom = __webpack_require__(27);
+  var _reactDom = __webpack_require__(5);
 
   var _reactDom2 = _interopRequireDefault(_reactDom);
 
@@ -75,25 +75,25 @@ module.exports =
 
   var _coreLocation2 = _interopRequireDefault(_coreLocation);
 
-  var _componentsLayout = __webpack_require__(5);
+  var _componentsLayout = __webpack_require__(7);
 
   var _componentsLayout2 = _interopRequireDefault(_componentsLayout);
 
   var routes = {
     '/404': function _() {
-      return __webpack_require__(10);
-    }, '/500': function _() {
-      return __webpack_require__(11);
-    }, '/about': function about() {
       return __webpack_require__(12);
-    }, '/blog': function blog() {
+    }, '/500': function _() {
       return __webpack_require__(13);
-    }, '/blog/test-article-one': function blogTestArticleOne() {
+    }, '/about': function about() {
       return __webpack_require__(14);
-    }, '/blog/test-article-two': function blogTestArticleTwo() {
+    }, '/blog': function blog() {
       return __webpack_require__(15);
-    }, '/': function _() {
+    }, '/blog/test-article-one': function blogTestArticleOne() {
       return __webpack_require__(16);
+    }, '/blog/test-article-two': function blogTestArticleTwo() {
+      return __webpack_require__(17);
+    }, '/': function _() {
+      return __webpack_require__(18);
     } }; // Auto-generated on build. See tools/lib/routes-loader.js
 
   var route = function route(path, callback) {
@@ -238,15 +238,15 @@ module.exports =
 
   var _fbjsLibExecutionEnvironment = __webpack_require__(4);
 
-  var _historyLibCreateBrowserHistory = __webpack_require__(22);
+  var _historyLibCreateBrowserHistory = __webpack_require__(25);
 
   var _historyLibCreateBrowserHistory2 = _interopRequireDefault(_historyLibCreateBrowserHistory);
 
-  var _historyLibCreateMemoryHistory = __webpack_require__(23);
+  var _historyLibCreateMemoryHistory = __webpack_require__(26);
 
   var _historyLibCreateMemoryHistory2 = _interopRequireDefault(_historyLibCreateMemoryHistory);
 
-  var _historyLibUseQueries = __webpack_require__(24);
+  var _historyLibUseQueries = __webpack_require__(27);
 
   var _historyLibUseQueries2 = _interopRequireDefault(_historyLibUseQueries);
 
@@ -263,6 +263,181 @@ module.exports =
 
 /***/ },
 /* 5 */
+/***/ function(module, exports) {
+
+  module.exports = require("react-dom");
+
+/***/ },
+/* 6 */
+/***/ function(module, exports, __webpack_require__) {
+
+  'use strict';
+
+  Object.defineProperty(exports, '__esModule', {
+    value: true
+  });
+
+  var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+  var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+  function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  __webpack_require__(19);
+
+  var _reactAvatarEditor = __webpack_require__(29);
+
+  var _reactAvatarEditor2 = _interopRequireDefault(_reactAvatarEditor);
+
+  var _RangeInput = __webpack_require__(11);
+
+  var _RangeInput2 = _interopRequireDefault(_RangeInput);
+
+  var _lodash = __webpack_require__(28);
+
+  var _default = (function (_Component) {
+    _inherits(_default, _Component);
+
+    function _default(props) {
+      _classCallCheck(this, _default);
+
+      _get(Object.getPrototypeOf(_default.prototype), 'constructor', this).call(this, props);
+      this.state = {
+        scale: 1,
+        sourceImage: 'http://i.imgur.com/y7yZHAF.jpg'
+      };
+      this.changeScale = this.changeScale.bind(this);
+    }
+
+    _createClass(_default, [{
+      key: 'render',
+      value: function render() {
+        var sizes = this.props.sizes;
+
+        return _react2['default'].createElement(
+          'div',
+          null,
+          _react2['default'].createElement(
+            'div',
+            { style: { position: 'relative', width: sizes.picWidth, margin: 'auto' } },
+            _react2['default'].createElement(_reactAvatarEditor2['default'], {
+              image: this.state.sourceImage,
+              width: sizes.picWidth,
+              height: sizes.picHeight,
+              border: sizes.border,
+              ref: 'editor',
+              scale: this.state.scale }),
+            _react2['default'].createElement('canvas', {
+              width: sizes.picWidth,
+              height: sizes.picHeight,
+              ref: 'circleOverlay',
+              style: { pointerEvents: 'none', position: 'absolute', top: 0, left: 0 } }),
+            _react2['default'].createElement('i', {
+              onClick: (0, _lodash.partial)(this.changeScale, -0.1),
+              className: 'fa fa-minus-circle zoom-overlay-button',
+              style: { top: 30, left: 30 } }),
+            _react2['default'].createElement('i', {
+              onClick: (0, _lodash.partial)(this.changeScale, 0.1),
+              className: 'fa fa-plus-circle zoom-overlay-button',
+              style: { top: 30, right: 30 } })
+          ),
+          _react2['default'].createElement(
+            'div',
+            { className: 'zoom-controls' },
+            _react2['default'].createElement(
+              'div',
+              { className: 'zoom-out', onClick: (0, _lodash.partial)(this.changeScale, -0.1) },
+              _react2['default'].createElement('i', { className: 'fa fa-minus' })
+            ),
+            _react2['default'].createElement(
+              'div',
+              { className: 'slider' },
+              _react2['default'].createElement(_RangeInput2['default'], {
+                min: 0.1,
+                max: 5,
+                step: 0.1,
+                defaultValue: this.state.scale,
+                value: this.state.scale,
+                onChange: this.handleRangeChange.bind(this) })
+            ),
+            _react2['default'].createElement(
+              'div',
+              { className: 'zoom-in', onClick: (0, _lodash.partial)(this.changeScale, 0.1) },
+              _react2['default'].createElement('i', { className: 'fa fa-plus' })
+            )
+          ),
+          _react2['default'].createElement(
+            'div',
+            null,
+            _react2['default'].createElement(
+              'button',
+              { onClick: this.handleProcessImage.bind(this), className: 'btn btn-green', style: { width: 200 } },
+              this.props.isProcessing ? _react2['default'].createElement('i', { className: 'fa fa-cog fa-spin' }) : 'Process'
+            )
+          )
+        );
+      }
+    }, {
+      key: 'componentDidUpdate',
+      value: function componentDidUpdate() {
+        this.drawCircleOverlay();
+      }
+    }, {
+      key: 'handleProcessImage',
+      value: function handleProcessImage() {
+        var dataUrl = this.refs.editor.getImage();
+        this.props.processImage(dataUrl);
+      }
+    }, {
+      key: 'handleRangeChange',
+      value: function handleRangeChange(e) {
+        this.setState({ scale: parseFloat(e.target.value) });
+      }
+    }, {
+      key: 'changeScale',
+      value: function changeScale(delta) {
+        var scale = this.state.scale + delta;
+        this.setState({ scale: scale });
+      }
+    }, {
+      key: 'drawCircleOverlay',
+      value: function drawCircleOverlay() {
+        var canvas = this.refs.circleOverlay;
+        var context = canvas.getContext('2d');
+        var centerX = canvas.width / 2;
+        var centerY = canvas.height * 0.4;
+        var radius = canvas.width * 0.2;
+
+        context.beginPath();
+        context.strokeStyle = '#003300';
+        context.lineWidth = 5;
+        context.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
+        context.stroke();
+        context.closePath();
+      }
+    }], [{
+      key: 'getImage',
+      value: function getImage() {
+        return this.refs.editor.getImage();
+      }
+    }]);
+
+    return _default;
+  })(_react.Component);
+
+  exports['default'] = _default;
+  module.exports = exports['default'];
+
+/***/ },
+/* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -283,9 +458,9 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  __webpack_require__(17);
+  __webpack_require__(20);
 
-  var _Navigation = __webpack_require__(7);
+  var _Navigation = __webpack_require__(9);
 
   var _Navigation2 = _interopRequireDefault(_Navigation);
 
@@ -312,7 +487,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 6 */
+/* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -347,7 +522,7 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  __webpack_require__(18);
+  __webpack_require__(21);
 
   var _coreLocation = __webpack_require__(3);
 
@@ -429,7 +604,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 7 */
+/* 9 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -450,9 +625,9 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  __webpack_require__(19);
+  __webpack_require__(22);
 
-  var _Link = __webpack_require__(6);
+  var _Link = __webpack_require__(8);
 
   var _Link2 = _interopRequireDefault(_Link);
 
@@ -485,7 +660,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 8 */
+/* 10 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -537,7 +712,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 9 */
+/* 11 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -554,7 +729,7 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  __webpack_require__(20);
+  __webpack_require__(23);
 
   exports['default'] = function (props) {
     return _react2['default'].createElement('input', _extends({}, props, { type: 'range' }));
@@ -563,7 +738,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 10 */
+/* 12 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -628,7 +803,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 11 */
+/* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -699,7 +874,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 12 */
+/* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -764,7 +939,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 13 */
+/* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -829,7 +1004,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 14 */
+/* 16 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -894,7 +1069,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 15 */
+/* 17 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -959,7 +1134,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 16 */
+/* 18 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -988,21 +1163,19 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  __webpack_require__(21);
+  var _reactDom = __webpack_require__(5);
 
-  var _reactAvatarEditor = __webpack_require__(26);
+  var _reactDom2 = _interopRequireDefault(_reactDom);
 
-  var _reactAvatarEditor2 = _interopRequireDefault(_reactAvatarEditor);
+  __webpack_require__(24);
 
-  var _componentsPhotoStandard = __webpack_require__(8);
+  var _componentsPhotoStandard = __webpack_require__(10);
 
   var _componentsPhotoStandard2 = _interopRequireDefault(_componentsPhotoStandard);
 
-  var _componentsRangeInput = __webpack_require__(9);
+  var _componentsImageSizer = __webpack_require__(6);
 
-  var _componentsRangeInput2 = _interopRequireDefault(_componentsRangeInput);
-
-  var _lodash = __webpack_require__(25);
+  var _componentsImageSizer2 = _interopRequireDefault(_componentsImageSizer);
 
   var sizes = {
     picHeight: 600,
@@ -1020,17 +1193,12 @@ module.exports =
       this.state = {
         scale: 1,
         processedImage: '',
-        sourceImage: 'http://i.imgur.com/y7yZHAF.jpg'
+        sourceImage: 'http://i.imgur.com/y7yZHAF.jpg',
+        isProcessing: false
       };
-      this.changeScale = this.changeScale.bind(this);
     }
 
     _createClass(_default, [{
-      key: 'componentDidMount',
-      value: function componentDidMount() {
-        this.drawCircleOverlay();
-      }
-    }, {
       key: 'render',
       value: function render() {
         return _react2['default'].createElement(
@@ -1069,87 +1237,21 @@ module.exports =
             null,
             'Zoom and crop your photo below:'
           ),
-          _react2['default'].createElement(
-            'div',
-            { style: { position: 'relative', width: sizes.picWidth, margin: 'auto' } },
-            _react2['default'].createElement(_reactAvatarEditor2['default'], {
-              image: this.state.sourceImage,
-              width: sizes.picWidth,
-              height: sizes.picHeight,
-              border: sizes.border,
-              ref: 'editor',
-              scale: this.state.scale }),
-            _react2['default'].createElement('canvas', {
-              width: sizes.picWidth,
-              height: sizes.picHeight,
-              ref: 'circleOverlay',
-              style: { pointerEvents: 'none', position: 'absolute', top: 0, left: 0 } }),
-            _react2['default'].createElement('i', {
-              onClick: (0, _lodash.partial)(this.changeScale, -0.1),
-              className: 'fa fa-minus-circle',
-              style: { position: 'absolute', top: 30, left: 30, fontSize: 82 } }),
-            _react2['default'].createElement('i', {
-              onClick: (0, _lodash.partial)(this.changeScale, 0.1),
-              className: 'fa fa-plus-circle',
-              style: { position: 'absolute', top: 30, right: 30, fontSize: 82 } })
-          ),
-          _react2['default'].createElement(
-            'div',
-            { className: 'zoom-controls' },
-            _react2['default'].createElement(
-              'div',
-              { className: 'zoom-out' },
-              _react2['default'].createElement('i', { className: 'fa fa-minus' })
-            ),
-            _react2['default'].createElement(
-              'div',
-              { className: 'slider' },
-              _react2['default'].createElement(_componentsRangeInput2['default'], {
-                min: 0.1,
-                max: 5,
-                step: 0.1,
-                defaultValue: this.state.scale,
-                onChange: this.handleRangeChange.bind(this) })
-            ),
-            _react2['default'].createElement(
-              'div',
-              { className: 'zoom-in' },
-              _react2['default'].createElement('i', { className: 'fa fa-plus' })
-            )
-          ),
-          _react2['default'].createElement(
-            'div',
-            null,
-            _react2['default'].createElement(
-              'button',
-              { onClick: this.processImage.bind(this), className: 'btn btn-green' },
-              'Process'
-            )
-          ),
+          _react2['default'].createElement(_componentsImageSizer2['default'], {
+            sizes: sizes,
+            ref: 'imageSizer',
+            isProcessing: this.state.isProcessing,
+            processImage: this.processImage.bind(this) }),
           _react2['default'].createElement(_componentsPhotoStandard2['default'], { image: this.state.processedImage })
         );
       }
     }, {
-      key: 'componentDidUpdate',
-      value: function componentDidUpdate() {
-        this.drawCircleOverlay();
-      }
-    }, {
-      key: 'handleRangeChange',
-      value: function handleRangeChange(e) {
-        this.setState({ scale: parseFloat(e.target.value) });
-      }
-    }, {
-      key: 'changeScale',
-      value: function changeScale(delta) {
-        var scale = this.state.scale + delta;
-        this.setState({ scale: scale });
-      }
-    }, {
       key: 'processImage',
-      value: function processImage() {
-        var dataUrl = this.refs.editor.getImage();
+      value: function processImage(dataUrl) {
+        this.setState({ isProcessing: true });
         this.drawCanvas(dataUrl);
+        var node = _reactDom2['default'].findDOMNode(this.refs.imageSizer);
+        window.scrollTo(0, node.scrollHeight + node.offsetHeight);
       }
     }, {
       key: 'drawCanvas',
@@ -1186,26 +1288,13 @@ module.exports =
           ctx.closePath();
           ctx.stroke();
 
-          _this.setState({ processedImage: canvas.toDataURL('image/jpg') });
+          _this.setState({
+            processedImage: canvas.toDataURL('image/jpg'),
+            isProcessing: false
+          });
         };
 
         img.src = dataUrl;
-      }
-    }, {
-      key: 'drawCircleOverlay',
-      value: function drawCircleOverlay() {
-        var canvas = this.refs.circleOverlay;
-        var context = canvas.getContext('2d');
-        var centerX = canvas.width / 2;
-        var centerY = canvas.height * 0.4;
-        var radius = canvas.width * 0.2;
-
-        context.beginPath();
-        context.strokeStyle = '#003300';
-        context.lineWidth = 5;
-        context.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
-        context.stroke();
-        context.closePath();
       }
     }, {
       key: 'getSourceImage',
@@ -1239,34 +1328,6 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 17 */
-/***/ function(module, exports, __webpack_require__) {
-
-  exports = module.exports = __webpack_require__(2)();
-  // imports
-
-
-  // module
-  exports.push([module.id, "/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n\n/*\n * Media queries breakpoints\n * -------------------------------------------------------------------------- */\n\nhtml, body {\n  margin: 0;\n  padding: 0;\n  background-color: #f7f7f7;\n  color: #333;\n  font-family: 'Roboto','Helvetica',sans-serif;\n}\n\n.Layout {\n  margin: 0 auto;\n  max-width: 800px;\n  margin-bottom: 40px;\n  min-width: 640px;\n}\n\n.container {\n  border: 1px solid #999;\n  border-radius: 5px;\n  padding: 20px;\n  background-color: #fff;\n}\n", ""]);
-
-  // exports
-
-
-/***/ },
-/* 18 */
-/***/ function(module, exports, __webpack_require__) {
-
-  exports = module.exports = __webpack_require__(2)();
-  // imports
-
-
-  // module
-  exports.push([module.id, "/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n.Link {\n\n}\n", ""]);
-
-  // exports
-
-
-/***/ },
 /* 19 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -1275,7 +1336,7 @@ module.exports =
 
 
   // module
-  exports.push([module.id, "/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n\n/*\n * Media queries breakpoints\n * -------------------------------------------------------------------------- */\n\n.Navigation {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: row;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  margin: 1em 0 1em 0;\n  list-style: none;\n  -webkit-box-pack: end;\n  -webkit-justify-content: flex-end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n}\n\n.Navigation-item {\n  padding: 0 1em;\n}\n\n.Navigation-link {\n  padding: 0.5em 1em;\n  color: #21ce99;\n  text-decoration: none;\n  text-transform: uppercase;\n  cursor: pointer;\n}\n\n.Navigation-link:hover {\n  border-bottom: 3px solid #21ce99;\n  color: #333;\n}\n", ""]);
+  exports.push([module.id, ".zoom-controls {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  width: 600px;\n  margin: 10px auto;\n}\n.zoom-controls .slider {\n  -webkit-box-flex: 1;\n  -webkit-flex-grow: 1;\n      -ms-flex-positive: 1;\n          flex-grow: 1;\n}\n.zoom-controls .zoom-in, .zoom-controls .zoom-out {\n  padding: 10px;\n  font-size: 32px;\n  cursor: pointer;\n}\n", ""]);
 
   // exports
 
@@ -1289,7 +1350,7 @@ module.exports =
 
 
   // module
-  exports.push([module.id, "input[type=range] {\n  -webkit-appearance: none;\n  width: 100%;\n  margin: 13.8px 0;\n}\n\ninput[type=range]:focus {\n  outline: none;\n}\n\ninput[type=range]::-webkit-slider-runnable-track {\n  width: 100%;\n  height: 8.4px;\n  cursor: pointer;\n  -webkit-box-shadow: 1px 1px 1px #250000, 0px 0px 1px #3f0000;\n          box-shadow: 1px 1px 1px #250000, 0px 0px 1px #3f0000;\n  background: rgb(210, 210, 210);\n  border-radius: 1.3px;\n  border: 0.2px solid #010101;\n}\n\ninput[type=range]::-webkit-slider-thumb {\n  -webkit-box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;\n          box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;\n  border: 1px solid #000000;\n  height: 36px;\n  width: 20px;\n  border-radius: 3px;\n  background: rgb(16, 127, 230);\n  cursor: pointer;\n  -webkit-appearance: none;\n  margin-top: -14px;\n}\n\ninput[type=range]:focus::-webkit-slider-runnable-track {\n  background: #8eb9df;\n}\n\ninput[type=range]::-moz-range-track {\n  width: 100%;\n  height: 8.4px;\n  cursor: pointer;\n  box-shadow: 1px 1px 1px #250000, 0px 0px 1px #3f0000;\n  background: rgb(210, 210, 210);\n  border-radius: 1.3px;\n  border: 0.2px solid #010101;\n}\n\ninput[type=range]::-moz-range-thumb {\n  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;\n  border: 1px solid #000000;\n  height: 36px;\n  width: 16px;\n  border-radius: 3px;\n  background: rgb(16, 127, 230);\n  cursor: pointer;\n}\n\ninput[type=range]::-ms-track {\n  width: 100%;\n  height: 8.4px;\n  cursor: pointer;\n  background: transparent;\n  border-color: transparent;\n  color: transparent;\n}\n\ninput[type=range]::-ms-fill-lower {\n  background: #0f2436;\n  border: 0.2px solid #010101;\n  border-radius: 2.6px;\n  box-shadow: 1px 1px 1px #250000, 0px 0px 1px #3f0000;\n}\n\ninput[type=range]::-ms-fill-upper {\n  background: rgb(210, 210, 210);\n  border: 0.2px solid #010101;\n  border-radius: 2.6px;\n  box-shadow: 1px 1px 1px #250000, 0px 0px 1px #3f0000;\n}\n\ninput[type=range]::-ms-thumb {\n  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;\n  border: 1px solid #000000;\n  height: 36px;\n  width: 16px;\n  border-radius: 3px;\n  background: rgb(16, 127, 230);\n  cursor: pointer;\n  height: 8.4px;\n}\n\ninput[type=range]:focus::-ms-fill-lower {\n  background: rgb(210, 210, 210);\n}\n\ninput[type=range]:focus::-ms-fill-upper {\n  background: #8eb9df;\n}\n", ""]);
+  exports.push([module.id, "/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n\n/*\n * Media queries breakpoints\n * -------------------------------------------------------------------------- */\n\nhtml, body {\n  margin: 0;\n  padding: 0;\n  background-color: #f7f7f7;\n  color: #333;\n  font-family: 'Roboto','Helvetica',sans-serif;\n}\n\n.Layout {\n  margin: 0 auto;\n  max-width: 800px;\n  margin-bottom: 40px;\n  min-width: 640px;\n}\n\n.container {\n  border: 1px solid #999;\n  border-radius: 5px;\n  padding: 20px;\n  background-color: #fff;\n}\n", ""]);
 
   // exports
 
@@ -1303,46 +1364,82 @@ module.exports =
 
 
   // module
-  exports.push([module.id, "/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n\n/*\n * Media queries breakpoints\n * -------------------------------------------------------------------------- */\n\n.btn, .btn-green {\n  background-color: #3498db;\n  color: #fff;\n  text-align: center;\n  font-size: 18px;\n  border: none;\n  border-radius: 3px;\n  position: relative;\n  padding: 0.6em 1.2em;\n}\n\n.btn:hover, .btn-green:hover {\n  background-color: #2980b9;\n}\n\n.btn-green {\n  background-color: #2ecc71;\n}\n\n.btn-green:hover {\n  background-color: #27ae60;\n}\n\n.Index {\n  text-align: center;\n}\n\n.upload-box {\n  display: inline-block;\n  width: 350px;\n  margin: 10px auto;\n  background-color: #eee;\n  border: 4px dashed #666;\n  border-radius: 10px;\n  padding: 10px;\n}\n\n.upload-box input {\n  margin-bottom: 16px;\n}\n\n.zoom-controls {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  width: 600px;\n  margin: 10px auto;\n}\n\n.zoom-controls .slider {\n  -webkit-box-flex: 1;\n  -webkit-flex-grow: 1;\n      -ms-flex-positive: 1;\n          flex-grow: 1;\n}\n\n.zoom-controls .zoom-in, .zoom-controls .zoom-out {\n  padding: 10px;\n  font-size: 32px;\n}\n", ""]);
+  exports.push([module.id, "/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n.Link {\n\n}\n", ""]);
 
   // exports
 
 
 /***/ },
 /* 22 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-  module.exports = require("history/lib/createBrowserHistory");
+  exports = module.exports = __webpack_require__(2)();
+  // imports
+
+
+  // module
+  exports.push([module.id, "/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n\n/*\n * Media queries breakpoints\n * -------------------------------------------------------------------------- */\n\n.Navigation {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: row;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  margin: 1em 0 1em 0;\n  list-style: none;\n  -webkit-box-pack: end;\n  -webkit-justify-content: flex-end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n}\n\n.Navigation-item {\n  padding: 0 1em;\n}\n\n.Navigation-link {\n  padding: 0.5em 1em;\n  color: #21ce99;\n  text-decoration: none;\n  text-transform: uppercase;\n  cursor: pointer;\n}\n\n.Navigation-link:hover {\n  border-bottom: 3px solid #21ce99;\n  color: #333;\n}\n", ""]);
+
+  // exports
+
 
 /***/ },
 /* 23 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-  module.exports = require("history/lib/createMemoryHistory");
+  exports = module.exports = __webpack_require__(2)();
+  // imports
+
+
+  // module
+  exports.push([module.id, "input[type=range] {\n  -webkit-appearance: none;\n  width: 100%;\n  margin: 13.8px 0;\n}\n\ninput[type=range]:focus {\n  outline: none;\n}\n\ninput[type=range]::-webkit-slider-runnable-track {\n  width: 100%;\n  height: 8.4px;\n  cursor: pointer;\n  -webkit-box-shadow: 1px 1px 1px #250000, 0px 0px 1px #3f0000;\n          box-shadow: 1px 1px 1px #250000, 0px 0px 1px #3f0000;\n  background: rgb(210, 210, 210);\n  border-radius: 1.3px;\n  border: 0.2px solid #010101;\n}\n\ninput[type=range]::-webkit-slider-thumb {\n  -webkit-box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;\n          box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;\n  border: 1px solid #000000;\n  height: 36px;\n  width: 20px;\n  border-radius: 3px;\n  background: rgb(16, 127, 230);\n  cursor: pointer;\n  -webkit-appearance: none;\n  margin-top: -14px;\n}\n\ninput[type=range]:focus::-webkit-slider-runnable-track {\n  background: #8eb9df;\n}\n\ninput[type=range]::-moz-range-track {\n  width: 100%;\n  height: 8.4px;\n  cursor: pointer;\n  box-shadow: 1px 1px 1px #250000, 0px 0px 1px #3f0000;\n  background: rgb(210, 210, 210);\n  border-radius: 1.3px;\n  border: 0.2px solid #010101;\n}\n\ninput[type=range]::-moz-range-thumb {\n  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;\n  border: 1px solid #000000;\n  height: 36px;\n  width: 16px;\n  border-radius: 3px;\n  background: rgb(16, 127, 230);\n  cursor: pointer;\n}\n\ninput[type=range]::-ms-track {\n  width: 100%;\n  height: 8.4px;\n  cursor: pointer;\n  background: transparent;\n  border-color: transparent;\n  color: transparent;\n}\n\ninput[type=range]::-ms-fill-lower {\n  background: #0f2436;\n  border: 0.2px solid #010101;\n  border-radius: 2.6px;\n  box-shadow: 1px 1px 1px #250000, 0px 0px 1px #3f0000;\n}\n\ninput[type=range]::-ms-fill-upper {\n  background: rgb(210, 210, 210);\n  border: 0.2px solid #010101;\n  border-radius: 2.6px;\n  box-shadow: 1px 1px 1px #250000, 0px 0px 1px #3f0000;\n}\n\ninput[type=range]::-ms-thumb {\n  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;\n  border: 1px solid #000000;\n  height: 36px;\n  width: 16px;\n  border-radius: 3px;\n  background: rgb(16, 127, 230);\n  cursor: pointer;\n  height: 8.4px;\n}\n\ninput[type=range]:focus::-ms-fill-lower {\n  background: rgb(210, 210, 210);\n}\n\ninput[type=range]:focus::-ms-fill-upper {\n  background: #8eb9df;\n}\n", ""]);
+
+  // exports
+
 
 /***/ },
 /* 24 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-  module.exports = require("history/lib/useQueries");
+  exports = module.exports = __webpack_require__(2)();
+  // imports
+
+
+  // module
+  exports.push([module.id, "/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n\n/*\n * Media queries breakpoints\n * -------------------------------------------------------------------------- */\n\n.btn, .btn-green {\n  background-color: #3498db;\n  color: #fff;\n  text-align: center;\n  font-size: 18px;\n  border: none;\n  border-radius: 3px;\n  position: relative;\n  padding: 0.6em 1.2em;\n}\n\n.btn:hover, .btn-green:hover {\n  background-color: #2980b9;\n}\n\n.btn-green {\n  background-color: #2ecc71;\n}\n\n.btn-green:hover {\n  background-color: #27ae60;\n}\n\n.Index {\n  text-align: center;\n}\n\n.upload-box {\n  display: inline-block;\n  width: 350px;\n  margin: 10px auto;\n  background-color: #eee;\n  border: 4px dashed #666;\n  border-radius: 10px;\n  padding: 10px;\n}\n\n.upload-box input {\n  margin-bottom: 16px;\n}\n\n.zoom-overlay-button {\n  position: absolute;\n  font-size: 104px;\n  cursor: pointer;\n}\n", ""]);
+
+  // exports
+
 
 /***/ },
 /* 25 */
 /***/ function(module, exports) {
 
-  module.exports = require("lodash");
+  module.exports = require("history/lib/createBrowserHistory");
 
 /***/ },
 /* 26 */
 /***/ function(module, exports) {
 
-  module.exports = require("react-avatar-editor");
+  module.exports = require("history/lib/createMemoryHistory");
 
 /***/ },
 /* 27 */
 /***/ function(module, exports) {
 
-  module.exports = require("react-dom");
+  module.exports = require("history/lib/useQueries");
+
+/***/ },
+/* 28 */
+/***/ function(module, exports) {
+
+  module.exports = require("lodash");
+
+/***/ },
+/* 29 */
+/***/ function(module, exports) {
+
+  module.exports = require("react-avatar-editor");
 
 /***/ }
 /******/ ]);
