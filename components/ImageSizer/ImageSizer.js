@@ -5,6 +5,7 @@ import AvatarEditor from 'react-avatar-editor'
 import RangeInput from '../RangeInput'
 
 import { partial } from 'lodash'
+import { MdAddCircleOutline, MdRemoveCircleOutline } from 'react-icons/lib/md'
 
 export default class extends Component {
   constructor(props) {
@@ -32,14 +33,16 @@ export default class extends Component {
           ref='circleOverlay'
           style={{ pointerEvents: 'none', position: 'absolute', top: 0, left: 0 }}>
         </canvas>
-        <i
+        <MdRemoveCircleOutline
+          size='100'
           onClick={partial(this.changeScale, -0.1)}
           className='fa fa-minus-circle zoom-overlay-button'
-          style={{top: 30, left: 30}}></i>
-        <i
+          style={{top: 30, left: 30}} />
+        <MdAddCircleOutline
+          size='100'
           onClick={partial(this.changeScale, 0.1)}
           className='fa fa-plus-circle zoom-overlay-button'
-          style={{top: 30, right: 30}}></i>
+          style={{top: 30, right: 30}} />
       </div>
       <div className='zoom-controls'>
         <div className='zoom-out' onClick={partial(this.changeScale, -0.1)}>
