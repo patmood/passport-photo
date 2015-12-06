@@ -19,7 +19,7 @@ export default class extends Component {
   render () {
     const { sizes, sourceImage } = this.props
     return <div>
-      <div style={{ position: 'relative', width: sizes.picWidth, margin: 'auto' }}>
+      <div className='sizer-container'style={{ width: sizes.picWidth }}>
         <AvatarEditor
           image={sourceImage}
           width={sizes.picWidth}
