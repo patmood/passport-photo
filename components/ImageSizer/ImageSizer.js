@@ -3,6 +3,7 @@ import './ImageSizer.scss'
 
 import AvatarEditor from 'react-avatar-editor'
 import RangeInput from '../RangeInput'
+import PersonOverlay from '../PersonOverlay'
 
 import { partial } from 'lodash'
 import { MdAddCircleOutline, MdRemoveCircleOutline } from 'react-icons/lib/md'
@@ -19,7 +20,7 @@ export default class extends Component {
   render () {
     const { sizes, sourceImage } = this.props
     return <div>
-      <div className='sizer-container'style={{ width: sizes.picWidth }}>
+      <div className='sizer-container' style={{ width: sizes.picWidth }}>
         <AvatarEditor
           image={sourceImage}
           width={sizes.picWidth}
@@ -27,21 +28,16 @@ export default class extends Component {
           border={sizes.border}
           ref='editor'
           scale={this.state.scale} />
-        <canvas
-          width={sizes.picWidth}
-          height={sizes.picHeight}
-          ref='circleOverlay'
-          style={{ pointerEvents: 'none', position: 'absolute', top: 0, left: 0 }}>
-        </canvas>
+        <PersonOverlay style={{position: 'absolute', top: 0, left: 0}}/>
         <MdRemoveCircleOutline
           size='100'
           onClick={partial(this.changeScale, -0.1)}
-          className='fa fa-minus-circle zoom-overlay-button'
+          className='zoom-overlay-button'
           style={{top: 30, left: 30}} />
         <MdAddCircleOutline
           size='100'
           onClick={partial(this.changeScale, 0.1)}
-          className='fa fa-plus-circle zoom-overlay-button'
+          className='zoom-overlay-button'
           style={{top: 30, right: 30}} />
       </div>
       <div className='zoom-controls'>
@@ -71,9 +67,9 @@ export default class extends Component {
     </div>
   }
 
-  componentDidUpdate () {
-    this.drawCircleOverlay()
-  }
+  // componentDidUpdate () {
+  //   this.drawCircleOverlay()
+  // }
 
   handleProcessImage () {
     const dataUrl = this.refs.editor.getImage()
@@ -89,20 +85,20 @@ export default class extends Component {
     this.setState({ scale })
   }
 
-  drawCircleOverlay () {
-    const canvas = this.refs.circleOverlay
-    const context = canvas.getContext('2d')
-    var centerX = canvas.width / 2
-    var centerY = canvas.height * 0.4
-    var radius = canvas.width * 0.2
-
-    context.beginPath()
-    context.strokeStyle = '#003300'
-    context.lineWidth = 5
-    context.arc(centerX, centerY, radius, 0, 2 * Math.PI, false)
-    context.stroke()
-    context.closePath()
-  }
+  // drawCircleOverlay () {
+  //   const canvas = this.refs.circleOverlay
+  //   const context = canvas.getContext('2d')
+  //   var centerX = canvas.width / 2
+  //   var centerY = canvas.height * 0.4
+  //   var radius = canvas.width * 0.2
+  //
+  //   context.beginPath()
+  //   context.strokeStyle = '#003300'
+  //   context.lineWidth = 5
+  //   context.arc(centerX, centerY, radius, 0, 2 * Math.PI, false)
+  //   context.stroke()
+  //   context.closePath()
+  // }
 
   static getImage () {
     return this.refs.editor.getImage()
