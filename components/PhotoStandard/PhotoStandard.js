@@ -1,4 +1,5 @@
 import React from 'react';
+import { MdFileDownload } from 'react-icons/lib/md'
 
 export default function (props) {
   if (!props.image) return <div></div>
@@ -12,7 +13,7 @@ export default function (props) {
           style={{width: 600, margin: 'auto'}} />
         <div>
           <button className='btn'>
-            Download Image
+            <MdFileDownload /> Download Image
           </button>
         </div>
       </a>
