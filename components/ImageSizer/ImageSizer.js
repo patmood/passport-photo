@@ -46,7 +46,7 @@ export default class extends Component {
       </div>
       <div className='zoom-controls'>
         <div className='zoom-out' onClick={partial(this.changeScale, -0.1)}>
-          <i className='fa fa-minus'></i>
+          <MdRemoveCircleOutline />
         </div>
         <div className='slider'>
           <RangeInput
@@ -58,7 +58,7 @@ export default class extends Component {
             onChange={this.handleRangeChange.bind(this)} />
         </div>
         <div className='zoom-in' onClick={partial(this.changeScale, 0.1)}>
-          <i className='fa fa-plus'></i>
+          <MdAddCircleOutline />
         </div>
       </div>
       <div>
