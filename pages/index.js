@@ -33,7 +33,6 @@ export default class extends Component {
   render () {
     return (
       <div className='Index'>
-        <h1>Passport Photo Maker</h1>
         <p>Photo shops charge around $20 for a set of passport photos!</p>
         <p>Make your own and print them at a standard photo kiosk for as little as $0.10</p>
         <div className='upload-box'>

@@ -6,15 +6,18 @@
 
 import React, { PropTypes } from 'react';
 import './Layout.scss';
-import Navigation from '../Navigation';
+// import Navigation from '../Navigation';
 
 function Layout({ children }) {
   return (
     <div className='Layout'>
-      <Navigation />
+      <h1 className='title'>Passport Pic Maker</h1>
       <div className='container'>
         {children}
       </div>
+      <footer className='footer'>
+        Crafted by <a href='https://twitter.com/patmood' target='_blank'>patmood</a> - Tweet me yo feedback!
+      </footer>
     </div>
   );
 }

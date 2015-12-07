@@ -14,6 +14,19 @@ html, body {
   font-family: $font-family-base;
 }
 
+a {
+  color: #428bca;
+  text-decoration: none;
+  &:hover, &:focus {
+    color: #005580;
+    text-decoration: underline;
+  }
+}
+
+.title {
+  text-align: center;
+}
+
 .Layout {
   margin: 0 auto;
   max-width: 800px;
@@ -26,4 +39,10 @@ html, body {
   border-radius: 5px;
   padding: 20px;
   background-color: #fff;
+  margin: 20px 0;
+}
+
+.footer {
+  text-align: center;
+  margin: 20px 0;
 }
