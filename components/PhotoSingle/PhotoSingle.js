@@ -5,15 +5,14 @@ export default function (props) {
   if (!props.image) return <div></div>
   return (
     <div>
-      <p>Print this image at your local pharmacy or photo kiosk as a standard size photo. A single photo should cost $0.10-0.30</p>
-      <p>This is standard photo print size in US, Canada, Australia and India. Called "10 × 15 cm" worldwide.</p>
+      <p>This is the single cropped image in JPEG format</p>
       <a href={props.image} download="passport-photo.jpg">
         <img
           src={props.image}
-          style={{width: 600, margin: 'auto'}} />
+          style={{width: 300, margin: 'auto'}} />
         <div>
           <button className='btn'>
-            <MdFileDownload /> Download Image
+            <MdFileDownload /> Download Single Photo
           </button>
         </div>
       </a>

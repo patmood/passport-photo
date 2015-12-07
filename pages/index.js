@@ -8,7 +8,8 @@ import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import './index.scss'
 
-import PhotoStandard from '../components/PhotoStandard'
+import PhotoSingle from '../components/PhotoSingle'
+import PhotoSet from '../components/PhotoSet'
 import ImageSizer from '../components/ImageSizer'
 
 const sizes = {
@@ -22,7 +23,8 @@ export default class extends Component {
     super(props)
     this.state = {
       scale: 1,
-      processedImage: '',
+      photoSet: null,
+      photoSingle: null,
       sourceImage: 'http://i.imgur.com/y7yZHAF.jpg',
       isProcessing: false,
     }
@@ -48,7 +50,8 @@ export default class extends Component {
           isProcessing={this.state.isProcessing}
           processImage={this.processImage.bind(this)}
           sourceImage={this.state.sourceImage} />
-        <PhotoStandard image={this.state.processedImage} />
+        <PhotoSet image={this.state.photoSet} />
+        <PhotoSingle image={this.state.photoSingle} />
       </div>
     )
   }
@@ -59,6 +62,7 @@ export default class extends Component {
   }
 
   drawCanvas (dataUrl) {
+    this.setState({ photoSingle: dataUrl })
     const canvas = document.createElement('canvas')
     if (!canvas) return console.log('Canvas not supported')
 
@@ -90,7 +94,7 @@ export default class extends Component {
       ctx.stroke()
 
       this.setState({
-        processedImage: canvas.toDataURL('image/jpg'),
+        photoSet: canvas.toDataURL('image/jpg'),
         isProcessing: false,
       })
 
@@ -110,7 +114,8 @@ export default class extends Component {
     reader.onloadend = () => {
       this.setState({
         sourceImage: reader.result,
-        processedImage: null,
+        photoSet: null,
+        photoSingle: null,
       })
     }
 
