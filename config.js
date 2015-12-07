@@ -5,7 +5,7 @@
  */
 
 export default {
-  title: 'Passport Picture Maker',
+  title: 'Passport Ready Photo',
   description: 'Create the perfect size passport photo for cheap printing',
   googleAnalyticsId: 'UA-XXXXX-X',
 };

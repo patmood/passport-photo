@@ -11,7 +11,7 @@ import './Layout.scss';
 function Layout({ children }) {
   return (
     <div className='Layout'>
-      <h1 className='title'>Passport Pic Maker</h1>
+      <h1 className='title'>Passport Ready Photo</h1>
       <div className='container'>
         {children}
       </div>
