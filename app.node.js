@@ -71,29 +71,29 @@ module.exports =
 
   var _fbjsLibExecutionEnvironment = __webpack_require__(4);
 
-  var _coreLocation = __webpack_require__(3);
+  var _coreLocation = __webpack_require__(12);
 
   var _coreLocation2 = _interopRequireDefault(_coreLocation);
 
-  var _componentsLayout = __webpack_require__(8);
+  var _componentsLayout = __webpack_require__(7);
 
   var _componentsLayout2 = _interopRequireDefault(_componentsLayout);
 
   var routes = {
     '/404': function _() {
-      return __webpack_require__(14);
+      return __webpack_require__(13);
     }, '/500': function _() {
-      return __webpack_require__(15);
+      return __webpack_require__(14);
     }, '/about': function about() {
-      return __webpack_require__(16);
+      return __webpack_require__(15);
     }, '/blog': function blog() {
-      return __webpack_require__(17);
+      return __webpack_require__(16);
     }, '/blog/test-article-one': function blogTestArticleOne() {
-      return __webpack_require__(18);
+      return __webpack_require__(17);
     }, '/blog/test-article-two': function blogTestArticleTwo() {
-      return __webpack_require__(19);
+      return __webpack_require__(18);
     }, '/': function _() {
-      return __webpack_require__(20);
+      return __webpack_require__(19);
     } }; // Auto-generated on build. See tools/lib/routes-loader.js
 
   var route = function route(path, callback) {
@@ -220,40 +220,9 @@ module.exports =
 
 /***/ },
 /* 3 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-  /**
-   * React Static Boilerplate
-   * https://github.com/koistya/react-static-boilerplate
-   * Copyright (c) Konstantin Tarkus (@koistya) | MIT license
-   */
-
-  'use strict';
-
-  Object.defineProperty(exports, '__esModule', {
-    value: true
-  });
-
-  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-  var _fbjsLibExecutionEnvironment = __webpack_require__(4);
-
-  var _historyLibCreateBrowserHistory = __webpack_require__(27);
-
-  var _historyLibCreateBrowserHistory2 = _interopRequireDefault(_historyLibCreateBrowserHistory);
-
-  var _historyLibCreateMemoryHistory = __webpack_require__(28);
-
-  var _historyLibCreateMemoryHistory2 = _interopRequireDefault(_historyLibCreateMemoryHistory);
-
-  var _historyLibUseQueries = __webpack_require__(29);
-
-  var _historyLibUseQueries2 = _interopRequireDefault(_historyLibUseQueries);
-
-  var location = (0, _historyLibUseQueries2['default'])(_fbjsLibExecutionEnvironment.canUseDOM ? _historyLibCreateBrowserHistory2['default'] : _historyLibCreateMemoryHistory2['default'])();
-
-  exports['default'] = location;
-  module.exports = exports['default'];
+  module.exports = require("react-icons/lib/md");
 
 /***/ },
 /* 4 */
@@ -269,12 +238,6 @@ module.exports =
 
 /***/ },
 /* 6 */
-/***/ function(module, exports) {
-
-  module.exports = require("react-icons/lib/md");
-
-/***/ },
-/* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -297,23 +260,23 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  __webpack_require__(21);
+  __webpack_require__(20);
 
-  var _reactAvatarEditor = __webpack_require__(31);
+  var _reactAvatarEditor = __webpack_require__(28);
 
   var _reactAvatarEditor2 = _interopRequireDefault(_reactAvatarEditor);
 
-  var _RangeInput = __webpack_require__(13);
+  var _RangeInput = __webpack_require__(11);
 
   var _RangeInput2 = _interopRequireDefault(_RangeInput);
 
-  var _PersonOverlay = __webpack_require__(11);
+  var _PersonOverlay = __webpack_require__(8);
 
   var _PersonOverlay2 = _interopRequireDefault(_PersonOverlay);
 
-  var _lodash = __webpack_require__(30);
+  var _lodash = __webpack_require__(27);
 
-  var _reactIconsLibMd = __webpack_require__(6);
+  var _reactIconsLibMd = __webpack_require__(3);
 
   var _default = (function (_Component) {
     _inherits(_default, _Component);
@@ -391,16 +354,11 @@ module.exports =
             _react2['default'].createElement(
               'button',
               { onClick: this.handleProcessImage.bind(this), className: 'btn btn-green', style: { width: 200 } },
-              this.props.isProcessing ? _react2['default'].createElement('i', { className: 'fa fa-cog fa-spin' }) : 'Process'
+              this.props.isProcessing ? 'Processing...' : 'Process'
             )
           )
         );
       }
-
-      // componentDidUpdate () {
-      //   this.drawCircleOverlay()
-      // }
-
     }, {
       key: 'handleProcessImage',
       value: function handleProcessImage() {
@@ -418,22 +376,6 @@ module.exports =
         var scale = this.state.scale + delta;
         this.setState({ scale: scale });
       }
-
-      // drawCircleOverlay () {
-      //   const canvas = this.refs.circleOverlay
-      //   const context = canvas.getContext('2d')
-      //   var centerX = canvas.width / 2
-      //   var centerY = canvas.height * 0.4
-      //   var radius = canvas.width * 0.2
-      //
-      //   context.beginPath()
-      //   context.strokeStyle = '#003300'
-      //   context.lineWidth = 5
-      //   context.arc(centerX, centerY, radius, 0, 2 * Math.PI, false)
-      //   context.stroke()
-      //   context.closePath()
-      // }
-
     }], [{
       key: 'getImage',
       value: function getImage() {
@@ -448,7 +390,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 8 */
+/* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -469,11 +411,9 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  __webpack_require__(22);
+  __webpack_require__(21);
 
-  var _Navigation = __webpack_require__(10);
-
-  var _Navigation2 = _interopRequireDefault(_Navigation);
+  // import Navigation from '../Navigation';
 
   function Layout(_ref) {
     var children = _ref.children;
@@ -481,11 +421,26 @@ module.exports =
     return _react2['default'].createElement(
       'div',
       { className: 'Layout' },
-      _react2['default'].createElement(_Navigation2['default'], null),
+      _react2['default'].createElement(
+        'h1',
+        { className: 'title' },
+        'Passport Ready Photo'
+      ),
       _react2['default'].createElement(
         'div',
         { className: 'container' },
         children
+      ),
+      _react2['default'].createElement(
+        'footer',
+        { className: 'footer' },
+        'Crafted by ',
+        _react2['default'].createElement(
+          'a',
+          { href: 'https://twitter.com/patmood', target: '_blank' },
+          'patmood'
+        ),
+        ' - Tweet me yo feedback!'
       )
     );
   }
@@ -498,180 +453,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 9 */
-/***/ function(module, exports, __webpack_require__) {
-
-  /**
-   * React Static Boilerplate
-   * https://github.com/koistya/react-static-boilerplate
-   * Copyright (c) Konstantin Tarkus (@koistya) | MIT license
-   */
-
-  'use strict';
-
-  Object.defineProperty(exports, '__esModule', {
-    value: true
-  });
-
-  var _this = this;
-
-  var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-  var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-  var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-
-  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-  function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
-
-  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-
-  function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-  var _react = __webpack_require__(1);
-
-  var _react2 = _interopRequireDefault(_react);
-
-  __webpack_require__(23);
-
-  var _coreLocation = __webpack_require__(3);
-
-  var _coreLocation2 = _interopRequireDefault(_coreLocation);
-
-  function isLeftClickEvent(event) {
-    return event.button === 0;
-  }
-
-  function isModifiedEvent(event) {
-    return !!(event.metaKey || event.altKey || event.ctrlKey || event.shiftKey);
-  }
-
-  var Link = (function (_Component) {
-    _inherits(Link, _Component);
-
-    function Link() {
-      _classCallCheck(this, Link);
-
-      _get(Object.getPrototypeOf(Link.prototype), 'constructor', this).apply(this, arguments);
-    }
-
-    _createClass(Link, [{
-      key: 'render',
-      value: function render() {
-        var _props = this.props;
-        var to = _props.to;
-        var children = _props.children;
-
-        var props = _objectWithoutProperties(_props, ['to', 'children']);
-
-        return _react2['default'].createElement(
-          'a',
-          _extends({ onClick: Link.handleClick.bind(this) }, props),
-          children
-        );
-      }
-    }], [{
-      key: 'propTypes',
-      value: {
-        to: _react.PropTypes.string.isRequired,
-        children: _react.PropTypes.element.isRequired,
-        state: _react.PropTypes.object,
-        onClick: _react.PropTypes.func
-      },
-      enumerable: true
-    }, {
-      key: 'handleClick',
-      value: function value(event) {
-        var allowTransition = true;
-        var clickResult = undefined;
-
-        if (_this.props && _this.props.onClick) {
-          clickResult = _this.props.onClick(event);
-        }
-
-        if (isModifiedEvent(event) || !isLeftClickEvent(event)) {
-          return;
-        }
-
-        if (clickResult === false || event.defaultPrevented === true) {
-          allowTransition = false;
-        }
-
-        event.preventDefault();
-
-        if (allowTransition) {
-          var link = event.currentTarget;
-          _coreLocation2['default'].pushState(_this.props && _this.props.state || null, _this.props && _this.props.to || link.pathname + link.search);
-        }
-      },
-      enumerable: true
-    }]);
-
-    return Link;
-  })(_react.Component);
-
-  exports['default'] = Link;
-  module.exports = exports['default'];
-
-/***/ },
-/* 10 */
-/***/ function(module, exports, __webpack_require__) {
-
-  /**
-   * React Static Boilerplate
-   * https://github.com/koistya/react-static-boilerplate
-   * Copyright (c) Konstantin Tarkus (@koistya) | MIT license
-   */
-
-  'use strict';
-
-  Object.defineProperty(exports, '__esModule', {
-    value: true
-  });
-
-  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-  var _react = __webpack_require__(1);
-
-  var _react2 = _interopRequireDefault(_react);
-
-  __webpack_require__(24);
-
-  var _Link = __webpack_require__(9);
-
-  var _Link2 = _interopRequireDefault(_Link);
-
-  function Navigation() {
-    return _react2['default'].createElement(
-      'ul',
-      { className: 'Navigation', role: 'menu' },
-      _react2['default'].createElement(
-        'li',
-        { className: 'Navigation-item' },
-        _react2['default'].createElement(
-          'a',
-          { className: 'Navigation-link', href: '/', onClick: _Link2['default'].handleClick },
-          'Home'
-        )
-      ),
-      _react2['default'].createElement(
-        'li',
-        { className: 'Navigation-item' },
-        _react2['default'].createElement(
-          'a',
-          { className: 'Navigation-link', href: '/about', onClick: _Link2['default'].handleClick },
-          'About'
-        )
-      )
-    );
-  }
-
-  exports['default'] = Navigation;
-  module.exports = exports['default'];
-
-/***/ },
-/* 11 */
+/* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -705,7 +487,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 12 */
+/* 9 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -720,7 +502,7 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _reactIconsLibMd = __webpack_require__(6);
+  var _reactIconsLibMd = __webpack_require__(3);
 
   exports['default'] = function (props) {
     if (!props.image) return _react2['default'].createElement('div', null);
@@ -730,7 +512,7 @@ module.exports =
       _react2['default'].createElement(
         'p',
         null,
-        'Print this image at your local pharmacy or photo kiosk as a standard size photo. A single photo should cost $0.10-0.30'
+        'Print this image at your local photo kiosk or pharmacy as a standard size photo. A single photo should cost $0.10-0.30'
       ),
       _react2['default'].createElement(
         'p',
@@ -739,7 +521,7 @@ module.exports =
       ),
       _react2['default'].createElement(
         'a',
-        { href: props.image, download: 'passport-photo.jpg' },
+        { href: props.image, download: 'passport-photo-set.jpg' },
         _react2['default'].createElement('img', {
           src: props.image,
           style: { width: 600, margin: 'auto' } }),
@@ -750,7 +532,7 @@ module.exports =
             'button',
             { className: 'btn' },
             _react2['default'].createElement(_reactIconsLibMd.MdFileDownload, null),
-            ' Download Image'
+            ' Download Photo Set'
           )
         )
       )
@@ -760,7 +542,57 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 13 */
+/* 10 */
+/***/ function(module, exports, __webpack_require__) {
+
+  'use strict';
+
+  Object.defineProperty(exports, '__esModule', {
+    value: true
+  });
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _reactIconsLibMd = __webpack_require__(3);
+
+  exports['default'] = function (props) {
+    if (!props.image) return _react2['default'].createElement('div', null);
+    return _react2['default'].createElement(
+      'div',
+      null,
+      _react2['default'].createElement(
+        'p',
+        null,
+        'This is the single cropped image in JPEG format'
+      ),
+      _react2['default'].createElement(
+        'a',
+        { href: props.image, download: 'passport-photo.jpg' },
+        _react2['default'].createElement('img', {
+          src: props.image,
+          style: { width: 300, margin: 'auto' } }),
+        _react2['default'].createElement(
+          'div',
+          null,
+          _react2['default'].createElement(
+            'button',
+            { className: 'btn' },
+            _react2['default'].createElement(_reactIconsLibMd.MdFileDownload, null),
+            ' Download Single Photo'
+          )
+        )
+      )
+    );
+  };
+
+  module.exports = exports['default'];
+
+/***/ },
+/* 11 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -777,7 +609,7 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  __webpack_require__(25);
+  __webpack_require__(22);
 
   exports['default'] = function (props) {
     return _react2['default'].createElement('input', _extends({}, props, { type: 'range' }));
@@ -786,7 +618,44 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 14 */
+/* 12 */
+/***/ function(module, exports, __webpack_require__) {
+
+  /**
+   * React Static Boilerplate
+   * https://github.com/koistya/react-static-boilerplate
+   * Copyright (c) Konstantin Tarkus (@koistya) | MIT license
+   */
+
+  'use strict';
+
+  Object.defineProperty(exports, '__esModule', {
+    value: true
+  });
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+  var _fbjsLibExecutionEnvironment = __webpack_require__(4);
+
+  var _historyLibCreateBrowserHistory = __webpack_require__(24);
+
+  var _historyLibCreateBrowserHistory2 = _interopRequireDefault(_historyLibCreateBrowserHistory);
+
+  var _historyLibCreateMemoryHistory = __webpack_require__(25);
+
+  var _historyLibCreateMemoryHistory2 = _interopRequireDefault(_historyLibCreateMemoryHistory);
+
+  var _historyLibUseQueries = __webpack_require__(26);
+
+  var _historyLibUseQueries2 = _interopRequireDefault(_historyLibUseQueries);
+
+  var location = (0, _historyLibUseQueries2['default'])(_fbjsLibExecutionEnvironment.canUseDOM ? _historyLibCreateBrowserHistory2['default'] : _historyLibCreateMemoryHistory2['default'])();
+
+  exports['default'] = location;
+  module.exports = exports['default'];
+
+/***/ },
+/* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -851,7 +720,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 15 */
+/* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -922,7 +791,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 16 */
+/* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -987,7 +856,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 17 */
+/* 16 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -1052,7 +921,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 18 */
+/* 17 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -1117,7 +986,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 19 */
+/* 18 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -1182,7 +1051,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 20 */
+/* 19 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -1215,13 +1084,17 @@ module.exports =
 
   var _reactDom2 = _interopRequireDefault(_reactDom);
 
-  __webpack_require__(26);
+  __webpack_require__(23);
 
-  var _componentsPhotoStandard = __webpack_require__(12);
+  var _componentsPhotoSingle = __webpack_require__(10);
 
-  var _componentsPhotoStandard2 = _interopRequireDefault(_componentsPhotoStandard);
+  var _componentsPhotoSingle2 = _interopRequireDefault(_componentsPhotoSingle);
 
-  var _componentsImageSizer = __webpack_require__(7);
+  var _componentsPhotoSet = __webpack_require__(9);
+
+  var _componentsPhotoSet2 = _interopRequireDefault(_componentsPhotoSet);
+
+  var _componentsImageSizer = __webpack_require__(6);
 
   var _componentsImageSizer2 = _interopRequireDefault(_componentsImageSizer);
 
@@ -1240,7 +1113,8 @@ module.exports =
       _get(Object.getPrototypeOf(_default.prototype), 'constructor', this).call(this, props);
       this.state = {
         scale: 1,
-        processedImage: '',
+        photoSet: null,
+        photoSingle: null,
         sourceImage: 'http://i.imgur.com/y7yZHAF.jpg',
         isProcessing: false
       };
@@ -1252,11 +1126,6 @@ module.exports =
         return _react2['default'].createElement(
           'div',
           { className: 'Index' },
-          _react2['default'].createElement(
-            'h1',
-            null,
-            'Passport Photo Maker'
-          ),
           _react2['default'].createElement(
             'p',
             null,
@@ -1291,7 +1160,8 @@ module.exports =
             isProcessing: this.state.isProcessing,
             processImage: this.processImage.bind(this),
             sourceImage: this.state.sourceImage }),
-          _react2['default'].createElement(_componentsPhotoStandard2['default'], { image: this.state.processedImage })
+          _react2['default'].createElement(_componentsPhotoSet2['default'], { image: this.state.photoSet }),
+          _react2['default'].createElement(_componentsPhotoSingle2['default'], { image: this.state.photoSingle })
         );
       }
     }, {
@@ -1305,6 +1175,7 @@ module.exports =
       value: function drawCanvas(dataUrl) {
         var _this = this;
 
+        this.setState({ photoSingle: dataUrl });
         var canvas = document.createElement('canvas');
         if (!canvas) return console.log('Canvas not supported');
 
@@ -1336,7 +1207,7 @@ module.exports =
           ctx.stroke();
 
           _this.setState({
-            processedImage: canvas.toDataURL('image/jpg'),
+            photoSet: canvas.toDataURL('image/jpg'),
             isProcessing: false
           });
 
@@ -1359,7 +1230,8 @@ module.exports =
         reader.onloadend = function () {
           _this2.setState({
             sourceImage: reader.result,
-            processedImage: null
+            photoSet: null,
+            photoSingle: null
           });
         };
 
@@ -1378,7 +1250,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 21 */
+/* 20 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(2)();
@@ -1392,49 +1264,21 @@ module.exports =
 
 
 /***/ },
+/* 21 */
+/***/ function(module, exports, __webpack_require__) {
+
+  exports = module.exports = __webpack_require__(2)();
+  // imports
+
+
+  // module
+  exports.push([module.id, "/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n\n/*\n * Media queries breakpoints\n * -------------------------------------------------------------------------- */\n\nhtml, body {\n  margin: 0;\n  padding: 0;\n  background-color: #f7f7f7;\n  color: #333;\n  font-family: 'Roboto','Helvetica',sans-serif;\n}\n\na {\n  color: #428bca;\n  text-decoration: none;\n}\n\na:hover, a:focus {\n  color: #005580;\n  text-decoration: underline;\n}\n\n.title {\n  text-align: center;\n}\n\n.Layout {\n  margin: 0 auto;\n  max-width: 800px;\n  margin-bottom: 40px;\n  min-width: 640px;\n}\n\n.container {\n  border: 1px solid #999;\n  border-radius: 5px;\n  padding: 20px;\n  background-color: #fff;\n  margin: 20px 0;\n}\n\n.footer {\n  text-align: center;\n  margin: 20px 0;\n}\n", ""]);
+
+  // exports
+
+
+/***/ },
 /* 22 */
-/***/ function(module, exports, __webpack_require__) {
-
-  exports = module.exports = __webpack_require__(2)();
-  // imports
-
-
-  // module
-  exports.push([module.id, "/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n\n/*\n * Media queries breakpoints\n * -------------------------------------------------------------------------- */\n\nhtml, body {\n  margin: 0;\n  padding: 0;\n  background-color: #f7f7f7;\n  color: #333;\n  font-family: 'Roboto','Helvetica',sans-serif;\n}\n\n.Layout {\n  margin: 0 auto;\n  max-width: 800px;\n  margin-bottom: 40px;\n  min-width: 640px;\n}\n\n.container {\n  border: 1px solid #999;\n  border-radius: 5px;\n  padding: 20px;\n  background-color: #fff;\n}\n", ""]);
-
-  // exports
-
-
-/***/ },
-/* 23 */
-/***/ function(module, exports, __webpack_require__) {
-
-  exports = module.exports = __webpack_require__(2)();
-  // imports
-
-
-  // module
-  exports.push([module.id, "/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n.Link {\n\n}\n", ""]);
-
-  // exports
-
-
-/***/ },
-/* 24 */
-/***/ function(module, exports, __webpack_require__) {
-
-  exports = module.exports = __webpack_require__(2)();
-  // imports
-
-
-  // module
-  exports.push([module.id, "/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n\n/*\n * Media queries breakpoints\n * -------------------------------------------------------------------------- */\n\n.Navigation {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: row;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  margin: 1em 0 1em 0;\n  list-style: none;\n  -webkit-box-pack: end;\n  -webkit-justify-content: flex-end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n}\n\n.Navigation-item {\n  padding: 0 1em;\n}\n\n.Navigation-link {\n  padding: 0.5em 1em;\n  color: #21ce99;\n  text-decoration: none;\n  text-transform: uppercase;\n  cursor: pointer;\n}\n\n.Navigation-link:hover {\n  border-bottom: 3px solid #21ce99;\n  color: #333;\n}\n", ""]);
-
-  // exports
-
-
-/***/ },
-/* 25 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(2)();
@@ -1448,7 +1292,7 @@ module.exports =
 
 
 /***/ },
-/* 26 */
+/* 23 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(2)();
@@ -1456,37 +1300,37 @@ module.exports =
 
 
   // module
-  exports.push([module.id, "/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n\n/*\n * Media queries breakpoints\n * -------------------------------------------------------------------------- */\n\n.btn, .btn-green {\n  background-color: #3498db;\n  color: #fff;\n  text-align: center;\n  font-size: 18px;\n  border: none;\n  border-radius: 3px;\n  position: relative;\n  padding: 0.6em 1.2em;\n}\n\n.btn:hover, .btn-green:hover {\n  background-color: #2980b9;\n}\n\n.btn-green {\n  background-color: #2ecc71;\n}\n\n.btn-green:hover {\n  background-color: #27ae60;\n}\n\n.Index {\n  text-align: center;\n}\n\n.upload-box {\n  display: inline-block;\n  width: 350px;\n  margin: 10px auto;\n  background-color: #eee;\n  border: 3px solid #666;\n  border-radius: 10px;\n  padding: 10px;\n}\n\n.upload-box input {\n  margin-bottom: 16px;\n}\n\n.zoom-overlay-button {\n  position: absolute;\n  font-size: 104px;\n  cursor: pointer;\n}\n", ""]);
+  exports.push([module.id, "/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n\n/*\n * Media queries breakpoints\n * -------------------------------------------------------------------------- */\n\n.btn, .btn-green {\n  background-color: #3498db;\n  color: #fff;\n  text-align: center;\n  font-size: 18px;\n  border: none;\n  border-radius: 3px;\n  position: relative;\n  padding: 0.6em 1.2em;\n  cursor: pointer;\n}\n\n.btn:hover, .btn-green:hover {\n  background-color: #2980b9;\n}\n\n.btn-green {\n  background-color: #2ecc71;\n}\n\n.btn-green:hover {\n  background-color: #27ae60;\n}\n\n.Index {\n  text-align: center;\n}\n\n.upload-box {\n  display: inline-block;\n  width: 350px;\n  margin: 10px auto;\n  background-color: #eee;\n  border: 3px solid #666;\n  border-radius: 10px;\n  padding: 10px;\n}\n\n.upload-box input {\n  margin-bottom: 16px;\n}\n\n.zoom-overlay-button {\n  position: absolute;\n  font-size: 104px;\n  cursor: pointer;\n}\n", ""]);
 
   // exports
 
 
 /***/ },
-/* 27 */
+/* 24 */
 /***/ function(module, exports) {
 
   module.exports = require("history/lib/createBrowserHistory");
 
 /***/ },
-/* 28 */
+/* 25 */
 /***/ function(module, exports) {
 
   module.exports = require("history/lib/createMemoryHistory");
 
 /***/ },
-/* 29 */
+/* 26 */
 /***/ function(module, exports) {
 
   module.exports = require("history/lib/useQueries");
 
 /***/ },
-/* 30 */
+/* 27 */
 /***/ function(module, exports) {
 
   module.exports = require("lodash");
 
 /***/ },
-/* 31 */
+/* 28 */
 /***/ function(module, exports) {
 
   module.exports = require("react-avatar-editor");
