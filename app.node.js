@@ -1115,7 +1115,7 @@ module.exports =
         scale: 1,
         photoSet: null,
         photoSingle: null,
-        sourceImage: 'http://i.imgur.com/y7yZHAF.jpg',
+        sourceImage: '/demo-photo.jpg',
         isProcessing: false
       };
     }
@@ -1258,7 +1258,7 @@ module.exports =
 
 
   // module
-  exports.push([module.id, ".sizer-container {\n  position: relative;\n  margin: auto;\n  border: 3px solid #666;\n  border-radius: 10px;\n}\n\n.zoom-controls {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  width: 600px;\n  margin: 10px auto;\n}\n\n.zoom-controls .slider {\n  -webkit-box-flex: 1;\n  -webkit-flex-grow: 1;\n      -ms-flex-positive: 1;\n          flex-grow: 1;\n}\n\n.zoom-controls .zoom-in, .zoom-controls .zoom-out {\n  display: inline-block;\n  padding: 10px;\n  font-size: 32px;\n  cursor: pointer;\n}\n", ""]);
+  exports.push([module.id, ".sizer-container {\n  position: relative;\n  margin: auto;\n  border: 3px solid #666;\n  border-radius: 10px;\n  overflow: hidden;\n}\n\n.zoom-controls {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  width: 600px;\n  margin: 10px auto;\n}\n\n.zoom-controls .slider {\n  -webkit-box-flex: 1;\n  -webkit-flex-grow: 1;\n      -ms-flex-positive: 1;\n          flex-grow: 1;\n}\n\n.zoom-controls .zoom-in, .zoom-controls .zoom-out {\n  display: inline-block;\n  padding: 10px;\n  font-size: 32px;\n  cursor: pointer;\n}\n", ""]);
 
   // exports
 
