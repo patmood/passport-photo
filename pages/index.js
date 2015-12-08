@@ -25,7 +25,7 @@ export default class extends Component {
       scale: 1,
       photoSet: null,
       photoSingle: null,
-      sourceImage: 'http://i.imgur.com/y7yZHAF.jpg',
+      sourceImage: '/demo-photo.jpg',
       isProcessing: false,
     }
   }
