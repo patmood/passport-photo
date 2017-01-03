@@ -19,7 +19,7 @@ export default class extends Component {
 
   render () {
     const { sizes, sourceImage } = this.props
-    if (!sourceImage) return <div className='sizer-container'></div>
+    if (!sourceImage) return null
     return <div>
       <p>Zoom and crop your photo below:</p>
       <div className='sizer-container rounded' style={{ width: sizes.picWidth }}>

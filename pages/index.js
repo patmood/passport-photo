@@ -48,7 +48,8 @@ export default class extends Component {
       <div className='Index'>
         <section className='section'>
           <p>Photo shops charge around $20 for a set of passport photos!</p>
-          <p>Make your own and print them at a standard photo kiosk for as little as $0.10</p>
+          <p>Make your own and print them at a standard photo kiosk for around $0.10</p>
+          <h2>Step 1: Choose a photo</h2>
           <div className='upload-box rounded'>
             <p>Upload your photo:</p>
             <input
@@ -60,19 +61,30 @@ export default class extends Component {
           </div>
         </section>
 
-        <section className='section'>
-          <ImageSizer
-            sizes={this.state.sizes}
-            ref='imageSizer'
-            isProcessing={this.state.isProcessing}
-            processImage={this.processImage.bind(this)}
-            sourceImage={this.state.sourceImage} />
-        </section>
+        {
+          this.state.sourceImage &&
+          <section className='section'>
+            <h2>Step 2: Crop and position</h2>
+            <ImageSizer
+              sizes={this.state.sizes}
+              ref='imageSizer'
+              isProcessing={this.state.isProcessing}
+              processImage={this.processImage.bind(this)}
+              sourceImage={this.state.sourceImage} />
+          </section>
+        }
 
-        <section className='section'>
-          <PhotoSet image={this.state.photoSet} />
-          <PhotoSingle image={this.state.photoSingle} />
-        </section>
+        {
+          this.state.photoSet &&
+          this.state.photoSet &&
+          <section className='section'>
+            <h2>Step 3: Save and print</h2>
+            <p>Print this image at your local photo kiosk or pharmacy as a standard size photo. A single photo should cost around $0.10</p>
+            <p>This is standard photo print size in US, Canada, Australia and India. This size is also called "10 × 15 cm" (6 x 4 in).</p>
+            <PhotoSet image={this.state.photoSet} />
+            <PhotoSingle image={this.state.photoSingle} />
+          </section>
+        }
       </div>
     )
   }
