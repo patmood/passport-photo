@@ -12,6 +12,7 @@ html, body {
   background-color: $body-bg;
   color: $text-color;
   font-family: $font-family-base;
+  background-color: #fff;
 }
 
 a {
@@ -25,20 +26,18 @@ a {
 
 .title {
   text-align: center;
+  font-weight: $font-weight-title;
+  font-size: $font-title-size;
 }
 
 .Layout {
   margin: 0 auto;
   max-width: 800px;
   margin-bottom: 40px;
-  min-width: 640px;
 }
 
 .container {
-  border: 1px solid #999;
-  border-radius: 5px;
   padding: 20px;
-  background-color: #fff;
   margin: 20px 0;
 }
 

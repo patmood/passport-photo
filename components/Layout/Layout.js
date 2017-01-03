@@ -6,7 +6,6 @@
 
 import React, { PropTypes } from 'react';
 import './Layout.scss';
-// import Navigation from '../Navigation';
 
 function Layout({ children }) {
   return (

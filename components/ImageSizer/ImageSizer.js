@@ -3,7 +3,7 @@ import './ImageSizer.scss'
 
 import AvatarEditor from 'react-avatar-editor'
 import RangeInput from '../RangeInput'
-import PersonOverlay from '../PersonOverlay'
+import personOverlay from './person-overlay.svg'
 
 import { partial } from 'lodash'
 import { MdAddCircleOutline, MdRemoveCircleOutline } from 'react-icons/lib/md'
@@ -19,26 +19,18 @@ export default class extends Component {
 
   render () {
     const { sizes, sourceImage } = this.props
+    if (!sourceImage) return <div className='sizer-container'></div>
     return <div>
-      <div className='sizer-container' style={{ width: sizes.picWidth }}>
+      <p>Zoom and crop your photo below:</p>
+      <div className='sizer-container rounded' style={{ width: sizes.picWidth }}>
         <AvatarEditor
           image={sourceImage}
           width={sizes.picWidth}
           height={sizes.picHeight}
-          border={sizes.border}
+          border={0}
           ref='editor'
           scale={this.state.scale} />
-        <PersonOverlay style={{position: 'absolute', top: 0, left: 0}}/>
-        <MdRemoveCircleOutline
-          size='100'
-          onClick={partial(this.changeScale, -0.1)}
-          className='zoom-overlay-button'
-          style={{top: 30, left: 30}} />
-        <MdAddCircleOutline
-          size='100'
-          onClick={partial(this.changeScale, 0.1)}
-          className='zoom-overlay-button'
-          style={{top: 30, right: 30}} />
+        <img src={personOverlay} style={{position: 'absolute', width: '100%', left: 0, pointerEvents: 'none' }}/>
       </div>
       <div className='zoom-controls'>
         <div className='zoom-out' onClick={partial(this.changeScale, -0.1)}>

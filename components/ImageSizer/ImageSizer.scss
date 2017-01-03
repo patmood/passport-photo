@@ -1,15 +1,13 @@
 .sizer-container {
   position: relative;
-  margin: auto;
-  border: 3px solid #666;
-  border-radius: 10px;
+  margin: 0 auto;
+  border: 1px solid #ccc;
   overflow: hidden;
 }
 
 .zoom-controls {
   display: flex;
   align-items: center;
-  width: 600px;
   margin: 10px auto;
 
   .slider {

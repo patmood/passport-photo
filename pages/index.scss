@@ -6,12 +6,9 @@
 
 .upload-box {
   display: inline-block;
-  width: 350px;
   margin: 10px auto;
-  background-color: #eee;
-  border: 3px solid #666;
-  border-radius: 10px;
-  padding: 10px;
+  background-color: rgba(0,0,0,0.05);
+  padding: 10px 30px;
 
   input {
     margin-bottom: 16px;

@@ -12,45 +12,67 @@ import PhotoSingle from '../components/PhotoSingle'
 import PhotoSet from '../components/PhotoSet'
 import ImageSizer from '../components/ImageSizer'
 
-const sizes = {
-  picHeight: 600,
-  picWidth: 600,
-  border: 0,
-}
-
 export default class extends Component {
   constructor(props) {
     super(props)
+    this.startDemo = this.startDemo.bind(this)
     this.state = {
       scale: 1,
       photoSet: null,
       photoSingle: null,
-      sourceImage: '/demo-photo.jpg',
+      sourceImage: null,
       isProcessing: false,
+      sizes: {
+        picHeight: 600,
+        picWidth: 600,
+      },
     }
+  }
+
+  startDemo () {
+    this.setState({ sourceImage: '/demo-photo.jpg' })
+  }
+
+  componentDidMount () {
+    const size = Math.min(600, window.innerWidth - 50)
+    this.setState({
+      sizes: {
+        picHeight: size,
+        picWidth: size,
+      }
+    })
   }
 
   render () {
     return (
       <div className='Index'>
-        <p>Photo shops charge around $20 for a set of passport photos!</p>
-        <p>Make your own and print them at a standard photo kiosk for as little as $0.10</p>
-        <div className='upload-box'>
-          <p>Upload your photo:</p>
-          <input
-            type='file'
-            onChange={this.getSourceImage.bind(this)}
-          />
-        </div>
-        <p>Zoom and crop your photo below:</p>
-        <ImageSizer
-          sizes={sizes}
-          ref='imageSizer'
-          isProcessing={this.state.isProcessing}
-          processImage={this.processImage.bind(this)}
-          sourceImage={this.state.sourceImage} />
-        <PhotoSet image={this.state.photoSet} />
-        <PhotoSingle image={this.state.photoSingle} />
+        <section className='section'>
+          <p>Photo shops charge around $20 for a set of passport photos!</p>
+          <p>Make your own and print them at a standard photo kiosk for as little as $0.10</p>
+          <div className='upload-box rounded'>
+            <p>Upload your photo:</p>
+            <input
+              type='file'
+              onChange={this.getSourceImage.bind(this)}
+            />
+            <p>Not ready? Try our test image:</p>
+            <button className='btn btn-green' onClick={this.startDemo}>Demo</button>
+          </div>
+        </section>
+
+        <section className='section'>
+          <ImageSizer
+            sizes={this.state.sizes}
+            ref='imageSizer'
+            isProcessing={this.state.isProcessing}
+            processImage={this.processImage.bind(this)}
+            sourceImage={this.state.sourceImage} />
+        </section>
+
+        <section className='section'>
+          <PhotoSet image={this.state.photoSet} />
+          <PhotoSingle image={this.state.photoSingle} />
+        </section>
       </div>
     )
   }
@@ -65,8 +87,8 @@ export default class extends Component {
     const canvas = document.createElement('canvas')
     if (!canvas) return console.log('Canvas not supported')
 
-    canvas.width = sizes.picWidth * 3
-    canvas.height = sizes.picHeight * 2
+    canvas.width = this.state.sizes.picWidth * 3
+    canvas.height = this.state.sizes.picHeight * 2
 
     const ctx = canvas.getContext('2d')
     const img = new Image()
